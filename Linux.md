@@ -325,5 +325,218 @@ sudo crash /usr/lib/debug/vmlinux-<kernel_version> /var/crash/vmcore
 Highlight Benefits:
 Show how this prevents future crashes by identifying issues like driver bugs or memory leaks.
 
+The output of cat /proc/cmdline shows the kernel boot parameters that were passed during system startup, such as root filesystem, crashkernel reservation, and debugging options. These parameters are useful when analyzing crash dumps because they tell you how the kernel was configured at boot time. To analyze a crash dump, we use the crash utility along with the uncompressed kernel image (vmlinux) that matches the running kernel version and the vmcore file generated after a system crash. The command typically looks like sudo crash /usr/lib/debug/vmlinux-<kernel_version> /var/crash/vmcore, and yes, you must provide the correct matching vmlinux and vmcore files for proper analysis.
+
+Once inside the crash shell, we focus on examining system state at the time of the crash. Common checks include bt (backtrace) to see the call stack of crashed processes, ps to view running processes at crash time, vm for memory usage, log to inspect kernel logs, and files or mount for filesystem-related issues. These help identify root causes such as kernel panic, out-of-memory (OOM), or driver failures.
+
+For deeper debugging, gdb can also be used with the vmcore and vmlinux, but the crash tool is essentially a specialized wrapper around gdb tailored for kernel crash analysis, making it easier to interpret kernel data structures.
+
+Finally, a core dump and a crash dump are related but different: a core dump is generated when a user-space application crashes and is used to debug that application, while a crash dump (vmcore) is generated after a kernel crash and is used to analyze the entire system state at the time of failure.
 
 
+ps -eo pid,comm,user,args,%cpu,%mem --sort=-%mem | head
+ps -eo ... → custom format output.
+pid → Process ID.
+comm → Command name (short executable name).
+user → User who owns the process.
+args → Full command with arguments.
+%cpu → CPU usage percentage.
+%mem → Memory usage percentage.
+--sort=-%mem → Sort processes by memory usage in descending order (highest first).
+| head → Show only the top 10 results.
+
+📌 Example Output:
+
+  PID COMMAND  USER   %CPU %MEM COMMAND
+ 2345 java     tomcat 20.5 45.0 /usr/bin/java -jar myapp.jar
+ 1876 postgres pgsql   5.0 12.3 /usr/lib/postgresql/12/bin/postgres -D /var/lib/postgresql
+ 1423 nginx    root    1.2  3.0 nginx: worker process
+  987 python3  ubuntu  3.1  2.5 python3 app.py
+
+  🔹 What is nice?
+nice is a user-level command in Unix/Linux used to start a process with a specific niceness (priority hint).
+It maps to the kernel scheduler, which uses this niceness value when deciding CPU time allocation.
+🔹 Niceness range
+Linux: -20 (highest priority) → 19 (lowest priority).
+BSD/others: -20 → 20.
+Default: 0, inherited from the parent process.
+🔹 Meaning
+A lower niceness (negative value) → process gets more CPU time (higher priority).
+A higher niceness (positive value) → process runs only when CPU is otherwise idle.
+🔹 Example usage
+nice -n 10 myscript.sh     # run with lower priority
+renice -n -5 -p 1234        # increase priority of PID 1234
+🔹 Interview one-liner
+
+👉 “nice and renice are used to adjust process scheduling priority. The niceness value ranges from -20 (highest priority) to 19/20 (lowest). Lower niceness means the process will get more CPU share compared to others.”
+
+
+CPU State Percentages
+us (user) → Time CPU spends running user processes (apps, commands).
+sy (system) → Time CPU spends on kernel tasks (OS operations, drivers).
+ni (nice) → Time CPU spends on processes with adjusted “nice” priority.
+id (idle) → Time CPU is not doing anything (free CPU).
+wa (IO-wait) → Time CPU is idle because it’s waiting for I/O (disk, network).
+hi (hardware interrupts) → Time handling hardware interrupts (e.g., NIC, disk controller).
+si (software interrupts) → Time handling software interrupts (e.g., kernel-level services).
+st (steal) → Time “stolen” by hypervisor in a virtualized environment (means host is busy with other VMs).
+
+
+Interview-Ready Answer: How I Troubleshoot Performance Issues in Linux
+
+1. Start Broad – Identify the Symptom
+"First, I clarify what ‘performance issue’ means. Is the system completely slow, is CPU spiking, memory exhausted, disk I/O bottlenecked, or is it network latency? I also confirm if the issue is isolated to a single user or affecting multiple users."
+
+2. Check System Load
+
+uptime → to see load averages and how long the system has been up.
+top / htop → for a real-time overview of CPU, memory, and processes.
+
+3. Break It Down by Resource
+
+CPU: top, mpstat, pidstat → check if one process is consuming abnormal CPU.
+Memory: free -m, vmstat, cat /proc/meminfo → look for swap usage, cache vs free memory.
+Disk I/O: iostat -x, iotop, sar -d → check read/write latency and wait time.
+Network: ifconfig / ip addr, ss -tulwn, sar -n DEV, ping → check bandwidth, dropped packets, connectivity.
+
+4. Narrow Down to the Culprit Process
+
+ps -aux --sort=-%cpu or ps -aux --sort=-%mem → identify top consumers.
+Once identified → check logs of that service (journalctl -u <service> or /var/log/<app>.log).
+
+5. Investigate Deeper if Needed
+
+Kernel logs: dmesg → check for OOM killer events, hardware/driver issues, disk I/O errors.
+Application-level checks: look at query logs, thread dumps, or error logs.
+Advanced tools: strace (syscalls), perf (profiling), systemd-analyze (boot issues).
+
+6. Conclude with Corrective Action
+Depending on findings, I might:
+
+Kill/restart a runaway process.
+Tune configurations (e.g., DB queries, JVM heap).
+Add resources (CPU/RAM/disk).
+Fix network/firewall/DNS issues.
+If it’s a recurring issue, set up monitoring and alerting to proactively catch it.
+🔑 Interview Tip – One-Liner Summary
+
+"I follow a layered approach: start with system load, then drill into CPU, memory, disk I/O, and network. I use tools like top, vmstat, iostat, and journalctl to identify the bottleneck, then check application or kernel logs. Finally, I take corrective action, whether that’s restarting a process, tuning configs, or adding resources."
+
+
+
+Basic Linux Questions
+1. What is Linux?
+Solution: Linux is an open-source operating system kernel that acts as a bridge between the hardware and applications. It provides multitasking, multiuser capabilities, and security features. Popular distributions include Ubuntu, CentOS, and Fedora.
+2. What are inodes?
+Solution: An inode is a data structure used to store information about a file or directory, such as its size, permissions, owner, group, timestamps, and pointers to data blocks. The ls -i command displays the inode number.
+3. How to check disk usage?
+Solution: Use the df command to display disk usage and du for directory size.
+Example: df -h (human-readable disk usage).
+Example: du -sh /var/log (size of /var/log).
+4. What are symbolic and hard links?
+Solution:
+Symbolic Link: A shortcut pointing to another file or directory. Deleting the original file breaks the link.
+Example: ln -s /path/to/file symlink_name
+Hard Link: A direct reference to the data block of a file. Deleting the original file doesn't affect the link.
+Example: ln /path/to/file hardlink_name
+5. How to find a process and kill it?
+Solution:
+Use ps or top to list processes.
+Example: ps aux | grep process_name
+Kill a process using kill or killall.
+Example: kill -9 PID or killall process_name
+Intermediate Linux Questions
+6. Explain the difference between cron and at.
+Solution:
+cron: Schedules recurring tasks. Edit using crontab -e.
+Example: 0 3 * * * /path/to/script.sh (Run daily at 3:00 AM).
+at: Schedules one-time tasks.
+Example: at 5:00 PM → Write the command, press Ctrl+D.
+7. How do you monitor logs in real-time?
+Solution: Use tail with the -f option.
+Example: tail -f /var/log/syslog
+For multiple files: tail -f /var/log/{file1,file2}
+8. How to check open ports on a server?
+Solution:
+Use netstat or ss:
+Example: netstat -tuln or ss -tuln
+Use nmap:
+Example: nmap localhost
+9. What is the difference between apt and yum?
+Solution:
+apt: Used in Debian-based systems like Ubuntu for package management.
+yum: Used in Red Hat-based systems like CentOS.
+Both install, update, and remove packages but work with different package types (.deb for apt, .rpm for yum).
+10. How to secure a Linux server?
+Solution:
+Disable root login: Edit /etc/ssh/sshd_config and set PermitRootLogin no.
+Use firewalls: Configure iptables or ufw.
+Update packages: apt-get update && apt-get upgrade or yum update.
+Restrict file permissions: Use chmod and chown.
+Monitor logs: /var/log/auth.log, /var/log/messages.
+Advanced Linux Questions
+11. Explain LVM (Logical Volume Manager).
+Solution: LVM allows flexible disk management by abstracting physical storage into logical volumes.
+Commands:
+Create physical volume: pvcreate /dev/sdb
+Create volume group: vgcreate vg_name /dev/sdb
+Create logical volume: lvcreate -L 10G -n lv_name vg_name
+Format and mount: mkfs.ext4 /dev/vg_name/lv_name and mount /dev/vg_name/lv_name /mnt
+12. How to troubleshoot high CPU usage?
+Solution:
+Use top or htop to identify resource-intensive processes.
+Use ps:
+Example: ps -eo pid,ppid,cmd,%mem,%cpu --sort=-%cpu | head
+Analyze logs for anomalies: /var/log/syslog, /var/log/messages.
+13. What is SELinux, and how does it work?
+Solution: Security-Enhanced Linux is a security module that enforces mandatory access control (MAC) policies.
+Commands:
+Check status: sestatus
+Change mode: setenforce 0 (permissive) or setenforce 1 (enforcing).
+Modify policy: Use semanage or /etc/selinux/config.
+14. How does a kernel panic occur, and how do you troubleshoot it?
+Solution: A kernel panic happens when the Linux kernel detects a fatal error it can't recover from.
+Check logs in /var/log/kern.log or /var/log/messages.
+Verify hardware components like RAM and disks.
+Boot in recovery mode and check boot loader configurations.
+15. Explain the difference between fork() and exec().
+Solution:
+fork(): Creates a new child process that is a copy of the parent process.
+exec(): Replaces the current process image with a new one.
+
+Example:
+
+pid = fork();
+if (pid == 0) {
+  execvp("./program", args);
+}
+16. How to troubleshoot disk I/O issues?
+Solution:
+Use iostat to monitor disk I/O.
+Use iotop to identify processes causing high I/O.
+Check disk health with smartctl or fsck.
+17. What are cgroups in Linux?
+Solution: Cgroups (Control Groups) manage and limit resources like CPU, memory, and I/O for processes.
+Create a cgroup: mkdir /sys/fs/cgroup/cpu/test_cgroup
+Assign tasks: echo PID > /sys/fs/cgroup/cpu/test_cgroup/tasks
+Limit resources: echo 50000 > /sys/fs/cgroup/cpu/test_cgroup/cpu.shares
+18. How does RAID work?
+Solution:
+RAID (Redundant Array of Independent Disks) provides redundancy, performance, or both.
+Types:
+RAID 0: Striping, no redundancy.
+RAID 1: Mirroring.
+RAID 5: Striping with parity.
+RAID 10: Combination of 1 and 0.
+Configure using mdadm.
+19. What are namespaces in Linux?
+Solution: Namespaces isolate resources for processes. Examples include:
+Mount (mnt): Isolate file systems.
+Network (net): Isolate network interfaces.
+Use unshare to create namespaces.
+20. How to troubleshoot boot issues?
+Solution:
+Check GRUB configurations: /boot/grub/grub.cfg.
+Boot into recovery mode.
+Rebuild initramfs: dracut --force or mkinitcpio.
+Check /var/log/boot.log.

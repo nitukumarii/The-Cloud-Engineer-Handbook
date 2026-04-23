@@ -315,3 +315,126 @@ CDN cache hit ratio?
 Bottleneck analysis?
 Load testing strategy?
 Preventing outages?
+
+
+
+Tell me about a time you had to quickly learn a new technology for a project.
+Can you describe a situation where you had to troubleshoot a production outage under pressure?
+Give an example of how you handled a conflict with a team member or stakeholder.
+Tell me about a time you had to balance multiple priorities — how did you manage it?
+Describe a time you automated a repetitive task — what was the impact?
+Tell me about a time you found a creative solution to a technical challenge.
+Describe a time you worked closely with security to ensure compliance.
+Have you ever disagreed with an architecture or design decision? How did you handle it?
+Tell me about a time you had to support an application after hours.
+Give me an example of when you failed — what did you learn from it?
+Describe a time you had to explain a technical issue to a non-technical audience.
+Have you ever been in a situation where you had incomplete information but still had to act?
+Tell me about a time you led a project or initiative.
+Describe a time you worked with cross-functional teams (engineering, security, architecture).
+Tell me about a time you improved performance of an application or server.
+Give an example where you had to implement a change with minimal downtime.
+Tell me about a time you proactively identified a risk and mitigated it.
+Describe how you handled a high-severity incident or escalation.
+Give me an example of when you trained or mentored a colleague.
+Tell me about a time you worked in a team with differing opinions on a solution.
+How do you keep yourself updated with the latest in cloud and Linux technologies?
+Tell me about a time you worked on a migration project — what challenges did you face?
+Give an example of when you optimized costs in infrastructure.
+Tell me about a time when you had to say "no" to a request — how did you handle it?
+How do you ensure documentation and knowledge transfer in your work?
+Describe a time when you had to support a system without much prior knowledge.
+Tell me about a time when you delivered something ahead of schedule.
+Give me an example of when you spotted a process gap and helped fix it.
+Describe how you handled on-call responsibilities during a critical issue.
+Tell me about the project you are most proud of and why.
+
+
+1. Can you walk me through your experience with Red Hat Enterprise Linux?
+
+S: At my previous role, I worked extensively with RHEL across production and staging environments supporting financial applications.
+T: My responsibility was to ensure secure, reliable, and optimized Linux infrastructure for business-critical applications.
+A: I handled OS installations, system patching, kernel upgrades, troubleshooting performance issues, and automated server builds using Ansible. I also integrated Red Hat Satellite for centralized patch and subscription management.
+R: This improved system reliability, reduced patching time by 40%, and strengthened compliance with corporate security standards.
+
+2. How do you perform an OS installation on RHEL?
+
+S: During infrastructure expansion, we needed to provision several new RHEL servers quickly.
+T: My task was to ensure standard, automated RHEL installations aligned with company baselines.
+A: I used Kickstart automation for consistent installations. Configured partitioning, network settings, and preloaded security hardening scripts. For manual installs, I used the ISO image, defined storage layout, and set up packages.
+R: The automated process reduced installation time per server from 45 minutes to under 10, ensuring all systems were compliant from day one.
+
+3. What is Red Hat Satellite and why is it used?
+
+S: At Fidelity, we had over 500+ RHEL servers that needed consistent patching and compliance.
+T: We required a central management solution.
+A: I deployed and managed Red Hat Satellite, which automated patching, lifecycle management, subscription handling, and content updates. Integrated with Ansible for playbook execution.
+R: This reduced manual patching errors, improved compliance reporting for audits, and saved the team several hours per week.
+
+4. How do you register a server to Red Hat Satellite?
+
+S: When onboarding new servers, they had to be registered to Satellite for patch and repo access.
+T: My responsibility was to automate registration.
+A: I used subscription-manager register --org <ORG> --activationkey <KEY> and configured the correct Satellite capsule. Also added this step to Ansible playbooks so new servers self-register at build time.
+R: This eliminated manual steps, ensured servers were compliant from deployment, and avoided downtime due to missing patches.
+
+5. What is the difference between RPM and YUM?
+
+S: In my daily work, I managed software packages on RHEL.
+T: I had to ensure proper understanding and use of RPM vs YUM.
+A: RPM (Red Hat Package Manager) installs individual packages but doesn’t resolve dependencies. YUM (Yellowdog Updater, Modified) works as a higher-level package manager that resolves dependencies automatically using repositories.
+R: Using YUM reduced dependency-related issues and streamlined patching, improving efficiency during large-scale updates.
+
+6. How do you patch Linux servers in production with minimal downtime?
+
+S: At Fidelity, patching cycles were quarterly and required strict SLAs.
+T: I had to patch servers without disrupting critical financial applications.
+A: I used Satellite to stage patches, tested them in non-prod, and then applied during approved maintenance windows. Coordinated with app teams, performed rolling reboots, and used live kernel patching (kpatch) when possible.
+R: Downtime was reduced by 70%, and we achieved 100% compliance within timelines.
+
+7. What steps do you follow to upgrade system software or firmware?
+
+S: We needed to upgrade firmware for RHEL servers running on HP hardware.
+T: Ensure smooth upgrade with no impact on production workloads.
+A: I scheduled upgrades, validated compatibility with vendor tools, applied updates during maintenance windows, and tested application functionality afterward. Also kept rollback plans ready.
+R: All servers were upgraded without incident, reducing vulnerability risks and improving hardware performance stability.
+
+8. How do you manage kernel upgrades in RHEL?
+
+S: Our application team needed kernel-level security patches.
+T: Ensure safe kernel upgrades across environments.
+A: I first tested the kernel in dev/test, then rolled out via Satellite. Used yum update kernel and updated GRUB. For critical environments, I leveraged kpatch to apply updates without reboot.
+R: This approach minimized downtime and achieved compliance with zero production impact in some cases.
+
+9. What is SELinux and how do you troubleshoot SELinux issues?
+
+S: SELinux was enabled by default on all our RHEL servers for compliance.
+T: Developers often faced permission-denied issues.
+A: I explained that SELinux enforces security policies beyond standard Linux permissions. For troubleshooting, I used getenforce, ausearch, and sealert -a /var/log/audit/audit.log to identify blocked actions. When needed, I wrote custom policies instead of disabling SELinux.
+R: Applications remained secure while allowing required functionality, avoiding the common bad practice of disabling SELinux.
+
+10. How do you check system resource utilization in Linux?
+
+S: During performance testing, developers reported slow response times.
+T: I needed to identify resource bottlenecks.
+A: I used top, htop, vmstat, iostat, and sar to check CPU, memory, and I/O utilization. Also used dstat for real-time monitoring.
+R: Identified high I/O wait caused by unoptimized queries; after DB team tuning, system performance improved by 40%.
+
+Follow-Up Questions (Technical Deep Dive)
+Can you explain in detail how you monitor CPU, memory, and disk utilization on RHEL?
+How do you decide when to resize a disk, and what steps do you follow?
+What tools or commands do you use for troubleshooting performance issues in Linux?
+Can you walk me through the process of applying a kernel upgrade in a production environment?
+How do you ensure patching doesn’t affect application availability?
+Can you give an example of a challenge you faced during a certificate renewal and how you resolved it?
+How do you configure SSL/TLS termination on RHEL-based systems?
+How do you ensure security compliance — do you use any benchmarks (e.g., CIS, STIG)?
+What is your process for handling system failures in the active region before failover to passive?
+How do you monitor Splunk logs on Linux systems, and what type of alerts do you configure?
+Follow-Up Questions (Behavioral Angle)
+Tell me about a time when patching caused unexpected downtime — how did you recover?
+How do you handle conflicts when the development team disagrees with the infra/security changes you propose?
+Can you describe a high-pressure troubleshooting scenario and how you handled it?
+How do you prioritize tasks when multiple systems need patching or troubleshooting simultaneously?
+Have you ever identified a recurring system issue? What steps did you take to prevent it long term?
+

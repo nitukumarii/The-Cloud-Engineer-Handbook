@@ -109,3 +109,6 @@ How do you schedule a task using cron on a Linux server?
 How would you write a script to check the health of a service and restart it if needed?
 What are the advantages of using Ansible or Puppet for automation on Linux?
 How do you write an efficient script to analyze log files and generate reports?
+
+
+ans

@@ -1,4 +1,5 @@
 100 Interview Questions Based on the Sheet (Grouped & Practical)
+
 **🟦 SRE & Reliability (1–20)**
 What is the role of an SRE?
 Difference between SRE and DevOps?
@@ -105,3 +106,111 @@ CDN cache hit ratio?
 How do you isolate bottlenecks?
 How do you plan load testing?
 How do you prevent outages?
+
+
+🟦 SRE & Reliability (1–20)
+What is SRE and how is it different from DevOps?
+How do you define SLIs and SLOs?
+What is an error budget?
+How do you reduce MTTR?
+Walk me through a production incident you handled.
+How do you prevent repeat incidents?
+What makes a good alert?
+How do you handle alert fatigue?
+What is a blameless postmortem?
+How do you prioritize reliability vs feature delivery?
+How do you embed reliability in CI/CD?
+What metrics indicate system health?
+How do you plan capacity?
+How do you detect anomalies early?
+What is toil? How do you reduce it?
+On-call experience?
+How do you design for high availability?
+Difference between monitoring and observability?
+How do you handle customer-impacting incidents?
+How do you document operational knowledge?
+🟦 AWS & Cloud (21–40)
+EC2 pricing models?
+How do you optimize AWS costs?
+ALB vs NLB?
+How does Auto Scaling work?
+IAM role vs policy?
+How do you secure AWS infrastructure?
+CloudWatch metrics vs logs?
+S3 vs EBS vs EFS?
+RDS HA options?
+Multi-AZ vs Multi-region?
+How does CloudFront work?
+CDN cache invalidation?
+VPC components?
+NAT vs Internet Gateway?
+Debugging network latency?
+Handling region outage?
+How do you monitor AWS services?
+How do you manage secrets?
+AWS limits and quotas?
+Cost visibility tools you’ve used?
+🟦 Terraform & IaC (41–55)
+What is IaC?
+Terraform vs CloudFormation?
+Terraform state file?
+State locking?
+Modules vs workspaces?
+Handling secrets in Terraform?
+Terraform plan vs apply?
+Rollback strategy?
+Multi-environment setup?
+Preventing drift?
+Versioning modules?
+Terraform best practices?
+Handling failed applies?
+Remote state?
+Code review for Terraform?
+🟦 CI/CD & Automation (56–70)
+Design a Jenkins pipeline.
+GitHub Actions vs Jenkins?
+What is GitOps?
+How does Argo CD work?
+Canary vs blue-green?
+Handling failed deployments?
+Pipeline security?
+Integrating scanning tools?
+Reducing pipeline time?
+Rollback automation?
+CI/CD for Kubernetes?
+Secrets in pipelines?
+Pipeline monitoring?
+Handling flaky builds?
+CI/CD best practices?
+🟦 Kubernetes & Containers (71–85)
+Pod lifecycle?
+Deployment vs StatefulSet?
+HPA working?
+What is Helm?
+Ingress vs LoadBalancer?
+RBAC explained?
+CrashLoopBackOff causes?
+Debugging pod issues?
+Monitoring EKS?
+Node autoscaling?
+Securing Kubernetes?
+ConfigMaps vs Secrets?
+Rolling updates?
+HA design in Kubernetes?
+Upgrade strategy?
+🟦 Observability & Performance (86–100)
+Golden signals?
+Prometheus architecture?
+Datadog vs Prometheus?
+Log aggregation strategy?
+Tracing latency issues?
+RED vs USE method?
+Alert tuning?
+Memory leak detection?
+Redis monitoring?
+Redis scaling?
+Web performance tuning?
+CDN cache hit ratio?
+Bottleneck analysis?
+Load testing strategy?
+Preventing outages?

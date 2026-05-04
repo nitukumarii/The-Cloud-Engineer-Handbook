@@ -1,4 +1,6 @@
 **Q: 🔹 Design a CI/CD Pipeline ?**
+
+
 “In our project, developers worked on feature branches and pushed code to GitHub. When a pull request was created to merge into the main branch, a webhook 
 triggered Jenkins. 
 Jenkins then checked out the code, set up the environment, and executed the build process to compile the application and generate artifacts.”

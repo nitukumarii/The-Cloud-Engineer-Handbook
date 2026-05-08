@@ -4,9 +4,15 @@
 
 ## 1. Pending State
 
-👉 Meaning: Pod is **not scheduled or not started**
+## Pending State
+
+👉 Meaning: Pod is **not yet running** (it may or may not be scheduled)
+
+---
 
 ### Direct Causes:
+
+**1. Not Scheduled (most common):**
 
 * Insufficient CPU
 * Insufficient Memory
@@ -14,9 +20,18 @@
 * Node selector / affinity mismatch
 * Taints & tolerations mismatch
 
-### What to say:
+**2. Scheduled but not started:**
 
-“Pending means the pod is not scheduled. Most common reason is insufficient resources on nodes.”
+* Image pulling in progress
+* Volume mounting delay
+* Init containers running
+
+---
+
+### What to say (Interview):
+
+“Pending means the pod is not yet running. It can either be waiting for scheduling due to insufficient resources, or it may already be scheduled but still initializing, like pulling images or setting up volumes.”
+
 
 ---
 

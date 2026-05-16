@@ -76,6 +76,7 @@ Look at restart count
 
 **Step 2: Check Logs**
 
+<img width="237" height="37" alt="image" src="https://github.com/user-attachments/assets/4024661c-8368-4ad3-96e8-228e1b169c0a" />
 
 
 Identify application errors

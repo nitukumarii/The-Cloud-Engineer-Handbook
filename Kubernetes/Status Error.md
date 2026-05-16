@@ -55,26 +55,61 @@ A Pod stays Pending either because no suitable node is available for scheduling,
 
 👉 Meaning: Container is **starting → crashing → restarting repeatedly**
 
-### Direct Causes:
+CrashLoopBackOff occurs when a container repeatedly starts, crashes, and Kubernetes applies a backoff delay before restarting it.
 
-* Application crash (bug)
-* OOMKilled (memory limit exceeded)
-* Wrong command / entrypoint
-* Missing config / secret
-* Dependency failure (DB/API not reachable)
-* Liveness probe failure
+It’s important to understand that CrashLoopBackOff is not the root cause — it indicates repeated container failures.
 
-### Important Clarification:
+This happens after the container is scheduled and started, so it’s typically a runtime issue, not a scheduling issue.
 
-* Happens **after container starts**
-* So ❌ NOT due to insufficient memory (scheduling issue)
-* ✅ Can be due to **OOM (runtime issue)**
+🔍 My Debugging Approach
 
-### What to say:
+Step 1: Check Pod Details
 
-“CrashLoopBackOff is not a root cause, it indicates repeated container failures.”
+kubectl describe pod <pod-name>
 
----
+Check Events
+
+Review Last State (Exit Code, OOMKilled)
+
+Look at restart count
+
+Step 2: Check Logs
+
+kubectl logs <pod-name>
+
+kubectl logs <pod-name> --previous
+
+Identify application errors
+
+Missing environment variables
+
+Use --previous for crash logs
+
+Step 3: Identify Root Cause
+
+Most issues fall into:
+
+Application / Config Issues
+
+Missing config, wrong env variables
+
+Invalid ConfigMap / Secret
+
+Resource Issues
+
+OOMKilled due to memory limits
+
+Command / Image Issues
+
+Wrong entrypoint or image
+
+Dependency Failures
+
+DB/API not reachable
+
+Probe Failures
+
+Liveness probe killing container
 
 ## 3. OOMKilled
 

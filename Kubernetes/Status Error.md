@@ -63,7 +63,7 @@ This happens after the container is scheduled and started, so it’s typically a
 
 🔍 My Debugging Approach
 
-Step 1: Check Pod Details
+**Step 1: Check Pod Details**
 
 kubectl describe pod <pod-name>
 
@@ -73,7 +73,7 @@ Review Last State (Exit Code, OOMKilled)
 
 Look at restart count
 
-Step 2: Check Logs
+**Step 2: Check Logs**
 
 kubectl logs <pod-name>
 
@@ -85,7 +85,7 @@ Missing environment variables
 
 Use --previous for crash logs
 
-Step 3: Identify Root Cause
+**Step 3: Identify Root Cause**
 
 Most issues fall into:
 

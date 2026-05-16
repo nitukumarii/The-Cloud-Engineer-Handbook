@@ -65,7 +65,7 @@ This happens after the container is scheduled and started, so it’s typically a
 
 **Step 1: Check Pod Details**
 
-kubectl describe pod <pod-name>
+**kubectl describe pod <pod-name>**
 
 Check Events
 
@@ -75,9 +75,9 @@ Look at restart count
 
 **Step 2: Check Logs**
 
-kubectl logs <pod-name>
+**kubectl logs <pod-name>**
 
-kubectl logs <pod-name> --previous
+**kubectl logs <pod-name> --previous**
 
 Identify application errors
 

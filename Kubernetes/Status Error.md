@@ -10,10 +10,14 @@ A Pod remains in Pending when it has been accepted by Kubernetes but cannot move
 **1. Scheduling Phase (most common):**
 The Kubernetes scheduler is unable to place the Pod on any node because no node satisfies the constraints defined in the Pod spec. Common reasons include:
 
-Insufficient CPU, memory, or ephemeral storage /n
+Insufficient CPU, memory, or ephemeral storage 
+
 Node selector or affinity mismatch
+
 Taints and tolerations not aligned
+
 Topology constraints not satisfied
+
 Node conditions like NotReady or DiskPressure
 
 In this case, the Pod is Pending because the scheduler is rejecting the Pod specification, not because the cluster is unhealthy.
@@ -22,13 +26,20 @@ In this case, the Pod is Pending because the scheduler is rejecting the Pod spec
 Even after a node is assigned, the Pod can remain Pending if the node cannot complete initialization. This can happen due to:
 
 Image pull delays or failures
+
 Init containers still running
+
 Volume mount or PVC binding delays
+
 Missing or delayed secrets/configMaps
 
+
 How to debug:
+
 The most reliable approach is to run:
+
 kubectl describe pod <pod-name>
+
 and check the Events section, which clearly indicates whether the issue is scheduling-related or initialization-related.
 
 Key insight:

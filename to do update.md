@@ -38,3 +38,11 @@ Performance and scalability
 Observability (Datadog, Prometheus, Grafana)
 SLO/SLI definition
 Incident handling
+
+
+
+At Fidelity, I worked on internal investor inventory platforms running on AWS EKS. These systems handled critical investor data and required high reliability and performance.
+
+My role focused on managing Kubernetes workloads, improving observability, and defining SLIs and SLOs to ensure system health. I also worked on performance testing and infrastructure provisioning using Terraform, enabling scalable and consistent environments.
+
+I contributed to incident response and proactive monitoring, which helped improve issue detection and system stability.”

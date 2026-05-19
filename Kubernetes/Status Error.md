@@ -147,6 +147,8 @@ From an SRE perspective, I also focus on prevention by standardizing probe confi
 
 In my experience, CrashLoopBackOff is usually a symptom of deeper issues, so I focus not only on fixing it quickly but ensuring it doesn’t happen again.
 
+
+
 ## 3. OOMKilled
 
 👉 Meaning: Container exceeded memory limit
@@ -251,6 +253,12 @@ In my experience, CrashLoopBackOff is usually a symptom of deeper issues, so I f
 ## 10. Evicted
 
 👉 Meaning: Pod removed from node
+
+<img width="790" height="177" alt="image" src="https://github.com/user-attachments/assets/cf29f1ae-af30-48b3-857f-2d61df1d8d01" />
+
+
+<img width="647" height="155" alt="image" src="https://github.com/user-attachments/assets/6e3a230e-d823-4dc6-9689-03c790e1c03a" />
+
 
 ### Direct Causes:
 

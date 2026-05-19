@@ -37,3 +37,11 @@ Kubernetes cannot pull the container image from the registry.
 **Check Pod Events**
 ```bash
 kubectl describe pod <pod-name> -n <namespace>
+
+</> Markdown
+
+###Check Events for:
+
+Manifest not found → wrong tag
+no pull access → credential issue
+TLS timeout → network issue

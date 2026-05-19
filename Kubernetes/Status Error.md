@@ -55,61 +55,98 @@ A Pod stays Pending either because no suitable node is available for scheduling,
 
 👉 Meaning: Container is **starting → crashing → restarting repeatedly**
 
-CrashLoopBackOff occurs when a container repeatedly starts, crashes, and Kubernetes applies a backoff delay before restarting it.
+rashLoopBackOff occurs when a container repeatedly starts, crashes, and Kubernetes restarts it with an increasing backoff delay. The most common causes are:
 
-It’s important to understand that CrashLoopBackOff is not the root cause — it indicates repeated container failures.
+Configuration issues such as missing environment variables, incorrect ConfigMaps/Secrets, or wrong startup commands
+Probe misconfiguration where liveness/readiness probes are too aggressive or incorrectly defined
+Resource constraints like low memory limits leading to OOMKilled errors
+Application-level failures such as unhandled exceptions or startup issues
+External dependency failures like database or API connectivity problems
 
-This happens after the container is scheduled and started, so it’s typically a runtime issue, not a scheduling issue.
+To troubleshoot CrashLoopBackOff, I follow a structured approach:
 
-🔍 My Debugging Approach
+1. Identify the failing pod
 
-**Step 1: Check Pod Details**
+Run:
 
-<img width="212" height="27" alt="image" src="https://github.com/user-attachments/assets/adcd5597-26ab-4e4f-9b69-5b4eac1b5d9f" />
+kubectl get pods
+kubectl describe pod <pod-name>
+Check:
+Restart Count
+Container State (Error / OOMKilled)
+Events section
 
+Example output:
 
-Check Events
+NAME                        READY   STATUS             RESTARTS   AGE
+demo-app-abc123             0/1     CrashLoopBackOff   5          2m
+Events:
+  Warning  BackOff    kubelet  Back-off restarting failed container
+  Warning  Failed     kubelet  Error: configmap "app-config" not found
 
-Review Last State (Exit Code, OOMKilled)
+👉 Insight: Missing ConfigMap → configuration issue
 
-Look at restart count
+2. Check logs (most critical step)
 
-**Step 2: Check Logs**
+Run:
 
-<img width="237" height="37" alt="image" src="https://github.com/user-attachments/assets/4024661c-8368-4ad3-96e8-228e1b169c0a" />
+kubectl logs <pod-name> --previous
 
+Example output:
 
-Identify application errors
+ERROR: missing DB_HOST environment variable
+Application failed to start
 
-Missing environment variables
+👉 Insight: Missing environment variable → root cause
 
-Use --previous for crash logs
+3. Validate configuration
 
-**Step 3: Identify Root Cause**
+Verify:
+ConfigMaps and Secrets
+Environment variables
+Startup commands
 
-Most issues fall into:
+👉 In real scenarios, many issues are caused by misconfigured endpoints or missing values
 
-Application / Config Issues
+4. Check probes
 
-Missing config, wrong env variables
+Look in:
 
-Invalid ConfigMap / Secret
+kubectl describe pod
 
-Resource Issues
+Example output:
 
-OOMKilled due to memory limits
+Liveness probe failed: HTTP probe failed with statuscode: 404
 
-Command / Image Issues
+👉 Insight: Probe misconfiguration → container restarting unnecessarily
 
-Wrong entrypoint or image
+5. Check resource limits
 
-Dependency Failures
+Look for:
+Last State: Terminated
+Reason: OOMKilled
+Exit Code: 137
 
-DB/API not reachable
+Run:
 
-Probe Failures
+kubectl top pod
 
-Liveness probe killing container
+👉 Insight: Memory limit too low → container killed
+
+6. Fix and redeploy
+
+Apply fix:
+Configuration correction
+Resource tuning
+Code or dependency fix
+
+Monitor:
+
+kubectl get pods -w
+
+From an SRE perspective, I also focus on prevention by standardizing probe configurations, setting proper resource limits, improving observability, and converting recurring issues into runbooks and platform improvements.
+
+In my experience, CrashLoopBackOff is usually a symptom of deeper issues, so I focus not only on fixing it quickly but ensuring it doesn’t happen again.
 
 ## 3. OOMKilled
 

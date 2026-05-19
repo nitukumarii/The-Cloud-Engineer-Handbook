@@ -101,11 +101,16 @@ Example output:
 3. Validate configuration
 
 Verify:
+
 ConfigMaps and Secrets
+
 Environment variables
+
 Startup commands
 
+
 👉 In real scenarios, many issues are caused by misconfigured endpoints or missing values
+
 
 4. Check probes
 

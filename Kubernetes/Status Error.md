@@ -73,34 +73,28 @@ To troubleshoot CrashLoopBackOff, I follow a structured approach:
 1. Identify the failing pod
 
 Run:
+<img width="282" height="57" alt="image" src="https://github.com/user-attachments/assets/9663116c-081b-4b0c-8579-0ffaeac34ee5" />
 
-kubectl get pods
-kubectl describe pod <pod-name>
+
 Check:
+
 Restart Count
+
 Container State (Error / OOMKilled)
+
 Events section
 
 Example output:
 
-NAME                        READY   STATUS             RESTARTS   AGE
-demo-app-abc123             0/1     CrashLoopBackOff   5          2m
-Events:
-  Warning  BackOff    kubelet  Back-off restarting failed container
-  Warning  Failed     kubelet  Error: configmap "app-config" not found
+<img width="463" height="133" alt="image" src="https://github.com/user-attachments/assets/42410f50-c316-44cd-96d9-838d03d033ee" />
+
 
 👉 Insight: Missing ConfigMap → configuration issue
 
 2. Check logs (most critical step)
 
-Run:
+<img width="412" height="181" alt="image" src="https://github.com/user-attachments/assets/f41715b7-bd89-485d-8f8a-8e515fade875" />
 
-kubectl logs <pod-name> --previous
-
-Example output:
-
-ERROR: missing DB_HOST environment variable
-Application failed to start
 
 👉 Insight: Missing environment variable → root cause
 
@@ -115,26 +109,15 @@ Startup commands
 
 4. Check probes
 
-Look in:
+<img width="547" height="147" alt="image" src="https://github.com/user-attachments/assets/2c670694-3602-4713-8193-eac012110a58" />
 
-kubectl describe pod
-
-Example output:
-
-Liveness probe failed: HTTP probe failed with statuscode: 404
 
 👉 Insight: Probe misconfiguration → container restarting unnecessarily
 
 5. Check resource limits
 
-Look for:
-Last State: Terminated
-Reason: OOMKilled
-Exit Code: 137
+<img width="323" height="186" alt="image" src="https://github.com/user-attachments/assets/074bb201-0be4-4b6b-9a18-b0838a454794" />
 
-Run:
-
-kubectl top pod
 
 👉 Insight: Memory limit too low → container killed
 
@@ -147,7 +130,8 @@ Code or dependency fix
 
 Monitor:
 
-kubectl get pods -w
+<img width="195" height="42" alt="image" src="https://github.com/user-attachments/assets/49b2d804-3c05-4390-be1b-08c5142583ec" />
+
 
 From an SRE perspective, I also focus on prevention by standardizing probe configurations, setting proper resource limits, improving observability, and converting recurring issues into runbooks and platform improvements.
 

@@ -86,6 +86,8 @@ Events section
 
 Example output:
 
+Below are the root cause of this crashloopbackoff error
+
 <img width="463" height="133" alt="image" src="https://github.com/user-attachments/assets/42410f50-c316-44cd-96d9-838d03d033ee" />
 
 
@@ -129,8 +131,11 @@ Startup commands
 6. Fix and redeploy
 
 Apply fix:
+
 Configuration correction
+
 Resource tuning
+
 Code or dependency fix
 
 Monitor:

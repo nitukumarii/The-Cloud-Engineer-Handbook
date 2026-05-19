@@ -58,10 +58,15 @@ A Pod stays Pending either because no suitable node is available for scheduling,
 CrashLoopBackOff occurs when a container repeatedly starts, crashes, and Kubernetes restarts it with an increasing backoff delay. The most common causes are:
 
 Configuration issues such as missing environment variables, incorrect ConfigMaps/Secrets, or wrong startup commands
+
 Probe misconfiguration where liveness/readiness probes are too aggressive or incorrectly defined
+
 Resource constraints like low memory limits leading to OOMKilled errors
+
 Application-level failures such as unhandled exceptions or startup issues
+
 External dependency failures like database or API connectivity problems
+
 
 To troubleshoot CrashLoopBackOff, I follow a structured approach:
 

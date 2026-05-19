@@ -55,7 +55,7 @@ A Pod stays Pending either because no suitable node is available for scheduling,
 
 👉 Meaning: Container is **starting → crashing → restarting repeatedly**
 
-rashLoopBackOff occurs when a container repeatedly starts, crashes, and Kubernetes restarts it with an increasing backoff delay. The most common causes are:
+CrashLoopBackOff occurs when a container repeatedly starts, crashes, and Kubernetes restarts it with an increasing backoff delay. The most common causes are:
 
 Configuration issues such as missing environment variables, incorrect ConfigMaps/Secrets, or wrong startup commands
 Probe misconfiguration where liveness/readiness probes are too aggressive or incorrectly defined

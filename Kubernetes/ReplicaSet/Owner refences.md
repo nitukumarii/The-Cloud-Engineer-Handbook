@@ -20,6 +20,9 @@ metadata:
 
 ---
 
+<img width="1072" height="822" alt="image" src="https://github.com/user-attachments/assets/8515633b-a542-4c06-856a-af5ccb09f67d" />
+
+
 ## 2. Why Owner References are Important
 
 Owner references exist to manage resource lifecycle automatically.

@@ -55,6 +55,7 @@ spec:
 kubectl get rs
 kubectl describe rs <name>
 kubectl scale rs <name> --replicas=5
+Change the number of Pods in this ReplicaSet to 5
 kubectl delete rs <name>
 ```
 

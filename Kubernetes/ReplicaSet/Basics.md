@@ -61,7 +61,7 @@ A ReplicaSet ensures that a specified number of identical Pods are running at al
 ⚠️ Important:
 - It may terminate extra Pods if count exceeds desired replicas
 
----
+---a
 
 ## 🔹 Self-Healing
 

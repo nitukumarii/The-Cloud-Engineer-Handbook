@@ -67,3 +67,220 @@ replicas: 0
 👉 Useful for:
 - Temporarily stopping an application
 - Saving resources
+
+
+## 📚 Kubernetes Deployment – Advanced Q&A
+
+---
+
+## 🔹 Selector & Template
+
+### 1. Why must selector match template labels?
+
+The selector tells the Deployment which Pods to manage.
+
+👉 It must match template labels so the Deployment can correctly identify and control its Pods.
+
+---
+
+### 2. What happens if they don’t match?
+
+- Deployment will not manage the Pods it creates
+- Pods may remain unmanaged (orphaned)
+- Kubernetes may throw validation error
+
+👉 Result: Broken Deployment
+
+---
+
+### 3. Can you change selector after creation?
+
+❌ No
+
+- Selector is **immutable**
+- To change it → delete and recreate Deployment
+
+---
+
+### 4. What is the role of template section?
+
+The `template` defines **how Pods should be created**.
+
+It contains:
+- Labels
+- Container specs
+- Environment, ports, etc.
+
+👉 It acts as a **blueprint for Pods**
+
+---
+
+### 5. Where are containers defined?
+
+Inside:
+
+```yaml
+spec:
+  template:
+    spec:
+      containers:
+```
+
+---
+
+## 🔹 Rolling Updates
+
+### 6. What is RollingUpdate strategy?
+
+A strategy that updates Pods **gradually** instead of all at once.
+
+👉 Ensures:
+- No downtime
+- Continuous availability
+
+---
+
+### 7. Difference between maxSurge and maxUnavailable?
+
+| Field           | Meaning |
+|----------------|--------|
+| maxSurge        | Extra Pods allowed during update |
+| maxUnavailable  | Pods allowed to be down |
+
+👉 Example:
+- maxSurge = 1 → can create 1 extra Pod
+- maxUnavailable = 1 → 1 Pod can be unavailable
+
+---
+
+### 8. What is Recreate strategy?
+
+- Deletes all old Pods first
+- Then creates new Pods
+
+❌ Causes downtime  
+✅ Simple but risky
+
+---
+
+### 9. How does zero downtime work?
+
+- New Pods are created before deleting old ones
+- Traffic is always served by running Pods
+
+👉 Achieved using:
+- RollingUpdate
+- maxSurge & maxUnavailable
+
+---
+
+## 🔹 Commands (Very Important)
+
+### Create deployment
+```bash
+kubectl apply -f deployment.yaml
+```
+
+### Get deployments
+```bash
+kubectl get deployments
+```
+
+### Describe deployment
+```bash
+kubectl describe deployment <name>
+```
+
+### Scale deployment
+```bash
+kubectl scale deployment <name> --replicas=5
+```
+
+### Update image
+```bash
+kubectl set image deployment/<name> nginx=nginx:1.25
+```
+
+---
+
+## 🔹 Rollback & History
+
+### 10. What is rollout?
+
+A rollout is the process of **updating Pods to a new version**.
+
+---
+
+### Check rollout status
+```bash
+kubectl rollout status deployment/<name>
+```
+
+---
+
+### View history
+```bash
+kubectl rollout history deployment/<name>
+```
+
+---
+
+### Rollback
+```bash
+kubectl rollout undo deployment/<name>
+```
+
+---
+
+## 🔹 Advanced
+
+### 11. What is revision in Deployment?
+
+- A version of Deployment created during updates
+- Each change in Pod template = new revision
+
+---
+
+### 12. How Deployment manages ReplicaSets?
+
+- Creates new ReplicaSet on update
+- Scales up new ReplicaSet
+- Scales down old ReplicaSet
+
+---
+
+### 13. What happens during image update?
+
+- New ReplicaSet is created with new image
+- New Pods are created
+- Old Pods are gradually deleted
+
+---
+
+### 14. What is crash loop and how Deployment handles it?
+
+CrashLoopBackOff:
+- Pod starts → crashes → restarts repeatedly
+
+Deployment handling:
+- Keeps trying to maintain desired replicas
+- May result in repeated failures if issue not fixed
+
+---
+
+### 15. Difference between liveness and readiness probe?
+
+| Probe Type       | Purpose |
+|-----------------|--------|
+| Liveness Probe   | Checks if container is alive |
+| Readiness Probe  | Checks if container is ready to serve traffic |
+
+👉 Key difference:
+- Liveness failure → container restarted
+- Readiness failure → traffic stopped (but container not restarted)
+
+---
+
+## 🧠 One-Line Summary
+
+Deployment automates Pod lifecycle with updates, scaling, and rollback.

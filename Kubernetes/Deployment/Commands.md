@@ -1,11 +1,3 @@
-kubectl apply -f deployment.yaml
-kubectl get deployments
-kubectl describe deployment <name>
-kubectl rollout status deployment/<name>
-kubectl rollout history deployment/<name>
-kubectl rollout undo deployment/<name>
-kubectl scale deployment/<name> --replicas=5
-kubectl set image deployment/<name> <container>=<image>
 
 
 ## 🔹 Commands (Very Important)
@@ -18,6 +10,9 @@ kubectl apply -f deployment.yaml
 ### Get deployments
 ```bash
 kubectl get deployments
+
+<img width="690" height="83" alt="image" src="https://github.com/user-attachments/assets/7967dd5b-0545-4cce-ba45-57c6d92149cd" />
+
 ```
 
 ### Describe deployment

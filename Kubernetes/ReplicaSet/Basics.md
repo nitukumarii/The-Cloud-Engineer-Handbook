@@ -46,7 +46,8 @@ spec:
       - name: nginx
         image: nginx
 ```
-
+for sanity
+kubectl apply -f file.yaml --dry-run=client -o yaml
 ---
 
 ## 🔹 Basic Commands

@@ -22,6 +22,82 @@ Overall, my day was a mix of operational stability, automation, continuous impro
 
 ## 🔍 Incident Handling & RCA
 - Can you walk me through one critical incident you handled end-to-end? What was the root cause?
+
+Ans - ## 🟣 Critical Incident Story (End-to-End RCA) — Mastercard Experience
+
+In my role at Mastercard, I was involved in a critical production incident impacting one of our core transaction-processing services running on **EKS (Kubernetes)** supporting **IBM Sterling workloads**.
+
+---
+
+### 🚨 Situation
+During peak traffic hours, we observed a sudden degradation in system health through **Dynatrace alerts and Splunk dashboards**, including:
+- Increased API latency
+- Spike in 5xx error rates
+- Multiple pod restarts across services
+
+This directly impacted transaction processing flows, making it a high-priority production incident.
+
+---
+
+### 🎯 Task
+My responsibility was to:
+- Quickly identify the root cause
+- Restore service stability as fast as possible
+- Coordinate across DevOps, application, and infrastructure teams
+- Ensure minimal business impact and prevent recurrence
+
+---
+
+### ⚙️ Action
+
+#### 1. Initial triage (first 10–15 minutes)
+- Checked Kubernetes cluster health (pods, nodes, deployments, HPA metrics)
+- Identified multiple pods in **CrashLoopBackOff state**
+- Determined issue was not isolated to a single node or namespace
+
+#### 2. Log & metrics analysis
+- Used **Splunk logs** and **Kubernetes event logs**
+- Observed repeated authentication timeout errors between microservices
+- Verified CPU/memory usage was normal → ruled out resource exhaustion
+
+#### 3. Cross-team collaboration
+- Engaged application + platform engineering teams immediately
+- Correlated issue with a recent production deployment
+- Identified changes in service-to-service authentication configuration
+
+#### 4. Root cause identification
+- Found misconfigured **IAM role-to-service-account mapping in EKS**
+- This caused intermittent authentication failures between microservices used in transaction flows
+
+#### 5. Mitigation steps
+- Rolled back the recent deployment using **Jenkins CI/CD pipeline**
+- Restarted affected deployments
+- Stabilized traffic flow across services
+
+#### 6. Validation
+- Monitored **Dynatrace + Splunk dashboards**
+- Confirmed:
+  - Error rates returned to baseline
+  - Latency normalized
+  - Pod restarts stopped
+
+---
+
+### 📌 Result
+- Service fully restored within a short incident window
+- No data loss or transaction corruption occurred
+- Improved MTTR through fast coordination and clear ownership
+
+Post-incident improvements:
+- Added validation checks for IAM/service-account mappings in CI/CD
+- Enhanced monitoring for authentication failure patterns
+- Improved alerting and dashboards for early detection
+- Strengthened deployment review process
+
+---
+
+### 🧠 Root Cause
+The root cause was a **misconfigured IAM role-to-service-account mapping during a recent deployment**, which led to intermittent authentication failures between microservices in the EKS-based architecture.
 - How do you decide when to escalate an incident vs continue troubleshooting yourself?
 - What was the most complex production issue you debugged in Kubernetes?
 - How do you ensure incidents don’t repeat after RCA? Can you give an example?

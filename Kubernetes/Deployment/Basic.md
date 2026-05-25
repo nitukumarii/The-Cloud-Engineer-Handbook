@@ -18,6 +18,18 @@ You define desired state, Kubernetes maintains it automatically.
 
 ---
 
+A Kubernetes Deployment manages pods that are:
+
+Ephemeral (can be created/destroyed anytime)
+Identical replicas
+Not tied to persistent identity or storage
+
+So:
+
+Pods from a Deployment = stateless workloads
+
+
+
 ## 🔁 How Deployment Works
 
 Deployment → ReplicaSet → Pods

@@ -8,7 +8,10 @@ Kubernetes is a **container orchestration system** that manages:
 - Networking
 - Self-healing
 
-👉 It works as a **continuous reconciliation system**:
+👉 It works as a **continuous reconciliation system**: 
+
+Kubernetes is a continuous reconciliation system because it constantly compares the desired state defined by the user with the actual state of the cluster and automatically takes actions to make them match.
+
 ```
 Desired State → Actual State (maintained automatically)
 ```

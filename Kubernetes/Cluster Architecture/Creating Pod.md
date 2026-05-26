@@ -65,6 +65,8 @@ etcd → scheduler
 Pod → assigned to Node X
 ```
 
+<img width="325" height="718" alt="image" src="https://github.com/user-attachments/assets/851ca0b7-7c2c-4a2e-95f1-77e3fc99d68f" />
+
 ---
 
 ## 5️⃣ kubelet (Executes)

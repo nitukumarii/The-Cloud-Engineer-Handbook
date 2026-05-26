@@ -49,8 +49,33 @@ Ensuring it keeps running correctly
 ## Why API Server is Critical
 
 - Single source of communication
+
+scheduler → API server → kubelet
+controller → API server → kubelet
+kubectl → API server → all components
+
+  
 - Ensures consistency
 - Enforces security (authn/authz)
+
+
+<img width="271" height="123" alt="image" src="https://github.com/user-attachments/assets/9241b9c1-d6e3-49cd-b60c-69db3b7ac8db" />
+
+  
+
+👉 kube-apiserver does authentication AND authorization
+
+Authentication
+
+<img width="181" height="215" alt="image" src="https://github.com/user-attachments/assets/553dd78c-1166-4215-a442-da5ff0dd4282" />
+
+Authorization
+
+<img width="305" height="73" alt="image" src="https://github.com/user-attachments/assets/ac070f06-dcc0-4924-b181-e4fe8b233345" />
+
+👉 RBAC is NOT the thing doing it directly — it is a method used BY the API server
+
+  
 - Maintains cluster integrity
 
 ---
@@ -63,6 +88,9 @@ Ensuring it keeps running correctly
   - ✅ Existing Pods keep running
 
 ---
+
+<img width="251" height="417" alt="image" src="https://github.com/user-attachments/assets/4cf37f12-813b-43a6-8b74-47ecd89332f9" />
+
 
 ### Interview Questions
 

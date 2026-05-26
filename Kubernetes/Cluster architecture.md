@@ -20,6 +20,19 @@ Desired State → Actual State (maintained automatically)
 
 # 🧠 Control Plane Components (Brain)
 
+The Control Plane is the brain of Kubernetes that manages the entire cluster.
+
+🎯 What it does
+
+The control plane is responsible for:
+
+Deciding what should run
+Deciding where it should run
+Ensuring it keeps running correctly
+
+👉 It does NOT run containers
+👉 It manages and controls everything
+
 ## 1. kube-apiserver
 
 ### Concept

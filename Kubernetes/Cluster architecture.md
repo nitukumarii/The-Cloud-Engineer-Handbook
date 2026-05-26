@@ -33,6 +33,24 @@ Desired State → Actual State (maintained automatically)
 
 ---
 
+## Why API Server is Critical
+
+- Single source of communication
+- Ensures consistency
+- Enforces security (authn/authz)
+- Maintains cluster integrity
+
+---
+
+## Failure Impact
+
+- If API server is down:
+  - ❌ Cannot create/update resources
+  - ❌ kubectl stops working
+  - ✅ Existing Pods keep running
+
+---
+
 ### Interview Questions
 
 **Q1: What is kube-apiserver?**  
@@ -40,6 +58,61 @@ Desired State → Actual State (maintained automatically)
 
 **Q2: Can components talk directly to each other?**  
 → ❌ No, all communication goes through API server.
+
+→ Only control plane communication goes through it  
+→ Pod-to-Pod traffic does NOT
+
+All management-related communication goes through kube-apiserver:
+
+- kubectl → API server  
+- kubelet → API server  
+- scheduler → API server  
+- controller manager → API server  
+
+👉 Rule:
+```
+All cluster state changes go through API server
+```
+
+---
+
+### ❌ Data Plane Communication (Does NOT go through API Server)
+
+Application traffic does NOT use the API server:
+
+- Pod → Pod communication  
+- Pod → Service communication  
+- Service → Pod routing  
+
+👉 These use:
+- CNI (network plugins)
+- kube-proxy
+
+---
+
+## Example Flows
+
+### 1. Creating a Pod
+
+```
+kubectl apply → API server → etcd
+                        ↓
+                   scheduler
+                        ↓
+                    kubelet
+```
+
+---
+
+### 2. Pod-to-Pod Communication
+
+```
+Pod A → Pod B (direct network)
+```
+
+👉 API server is NOT involved
+
+---
 
 **Q3: What happens when you run `kubectl apply`?**  
 → Request goes to API server → validated → stored in etcd.

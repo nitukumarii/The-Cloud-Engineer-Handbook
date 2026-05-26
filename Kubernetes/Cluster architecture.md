@@ -51,11 +51,14 @@ Ensuring it keeps running correctly
 - Single source of communication
 
 scheduler → API server → kubelet
+
 controller → API server → kubelet
+
 kubectl → API server → all components
 
   
 - Ensures consistency
+- 
 - Enforces security (authn/authz)
 
 

@@ -45,8 +45,6 @@ kubectl apply -f redis.yaml
 kubectl run redis --image=redis123 --restart=Never --dry-run=client -o yaml > redis.yaml
 ```
 
-👉 Fast, safe, avoids syntax errors
-
 ---
 
 # ✍️ 2. Editing YAML
@@ -111,94 +109,34 @@ E
 ```bash
 rm -f .redis.yaml.swp
 ```
+# 🚀 Kubernetes Image Update – Pods vs Deployments
+
+The `kubectl set image` command is used to update container images using the syntax: `kubectl set image <resource-type> <resource-name> <container-name>=<image-name>:<tag>`. For example, `kubectl set image deployment myapp nginx=nginx:1.25` updates the container image inside a Deployment.
 
 ---
 
-# 🔧 4. Fixing Wrong Image Issue
+## 🧠 1. If we need to change image of a running Pod → delete & recreate?
 
-## ❌ Current:
-
-```yaml
-image: redis123
-```
-
-## ✅ Fix:
-
-```yaml
-image: redis
-```
+Yes, this is correct. Pods are mostly immutable, so you cannot reliably change the image of a running Pod. The correct approach is to delete the existing Pod and recreate it using an updated YAML file, for example: `kubectl delete pod redis` followed by `kubectl apply -f redis.yaml`.
 
 ---
 
-## ⚠️ Important
+## 🧠 2. Deleting a Pod won’t affect production?
 
-👉 Pods are mostly **immutable**
-
-So after editing:
-
-```bash
-kubectl delete pod redis
-kubectl apply -f redis.yaml
-```
+This is wrong if the Pod is standalone. Deleting a standalone Pod will cause downtime because there is no controller to recreate it, so the application goes down. However, if the Pod is managed by a Deployment, ReplicaSet, or StatefulSet, then deleting the Pod is safe because Kubernetes will automatically create a new one, ensuring the application remains available.
 
 ---
 
-# ⚡ Alternative (Faster Way)
+## 🧠 3. set image won’t stop running Pod?
 
-```bash
-kubectl set image pod redis redis=redis
-```
-
-👉 Updates image without YAML
+This is wrong for Pods but correct for Deployments. Using `kubectl set image` on a Pod is not reliable and may restart or fail the Pod. However, when used on a Deployment, Kubernetes performs a rolling update where old Pods are gradually replaced by new ones with the updated image. This ensures the application stays up with no downtime.
 
 ---
 
-# 🧠 5. When to Use What
+## 🔥 Final Understanding
 
-| Task | Command |
-|------|--------|
-| Create YAML fast | `kubectl run --dry-run -o yaml` |
-| Write YAML manually | `vi file.yaml` |
-| Apply YAML | `kubectl apply -f file.yaml` |
-| Edit YAML file | `vi file.yaml` |
-| Edit live Pod | `kubectl edit pod` |
-| Fix image quickly | `kubectl set image` |
-| Debug stuck Pod | `kubectl describe pod` |
+Pods cannot be safely updated and usually require deletion and recreation, which may cause downtime if unmanaged. Deployments, on the other hand, support safe image updates using rolling updates without affecting application availability.
+
+👉 Memory tip: Pod → recreate, Deployment → update.
 
 ---
-
-# ⚠️ Common Mistakes
-
-❌ Editing YAML but not reapplying  
-❌ Forgetting Pods need recreation after changes  
-❌ Panic on swap file error  
-❌ Writing YAML from scratch in exams  
-
----
-
-# 🎯 Interview Tips
-
-👉 “Pods are immutable for fields like image, so we recreate them after updating YAML.”
-
-👉 “I prefer generating YAML using `--dry-run` instead of writing from scratch.”
-
----
-
-# 🧩 Final Mental Model
-
-```
-Create → run + dry-run + yaml  
-Edit → vi or kubectl edit  
-Fix → delete + apply  
-Fast fix → kubectl set image  
-```
-
----
-
-# 🧠 Summary
-
-- Use auto-generated YAML for speed  
-- Use vi for editing  
-- Handle swap file with "E"  
-- Recreate Pod after changes  
-- Use `set image` for quick fixes  

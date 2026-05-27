@@ -84,7 +84,7 @@ kubectl create -f podname --image=nginx
 ```bash
 --restart=Never
 ```
-
+> ⚠️ Note: The `--restart=Never` flag is mainly used for debugging or one-time tasks to ensure a standalone Pod is created. It is rarely used in production, where Deployments are preferred for managing applications.
 ---
 
 ❌ Scaling by adding containers to same Pod  

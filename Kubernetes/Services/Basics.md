@@ -90,9 +90,14 @@ User → NodeIP:NodePort → Service → Pod
 
 ## ❓ What happens with multiple pods?
 
+## 🔄 Multi-Pod Behavior
+
 “Service automatically selects all matching pods as endpoints.”
 
-👉 No extra configuration needed  
+- No manual config  
+- Works for:
+  - 1 pod  
+  - multiple pods  
 
 ---
 

@@ -111,17 +111,7 @@ Always use:
 
 ---
 
-## 🔹 Real-World Analogy
 
-Think of a Service like a **reception desk**:
-
-- You don’t contact employees directly (pods)
-- You contact the reception (service)
-- The reception connects you to an available employee
-
-Even if employees change, the contact point remains the same.
-
----
 
 ## 🔹 Final Summary
 

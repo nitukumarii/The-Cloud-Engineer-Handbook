@@ -122,4 +122,3 @@ A ClusterIP Service ensures stable communication in Kubernetes by:
 - Abstracting away pod-level changes
 5. Traffic is routed only to **healthy pods**
 
-### Flow:

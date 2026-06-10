@@ -28,6 +28,15 @@ Purpose: Keep system workloads separate from user workloads so you don’t accid
 
 🔹 kube-public
 This namespace is readable by all users (even unauthenticated).
+
+
+
+kube-public exists, but you generally don’t use it in production workloads.
+👉 Create your own namespaces with proper access control instead.
+
+If you're preparing for interviews, a strong answer is:
+
+“kube-public is rarely used in production due to its open access; we prefer custom namespaces with RBAC for security.”
 Used for public cluster information, like:
 cluster configuration data (ConfigMaps like cluster-info)
 Purpose: Expose non-sensitive info to anyone who needs basic cluster access

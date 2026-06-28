@@ -2,11 +2,17 @@
 
 
 tar archives an entire directory structure into a single file.
+
 It preserves:
+
 Directory hierarchy
+
 File permissions
+
 Ownership (when applicable)
+
 Timestamps
+
 With -z, it also compresses the archive to save disk space.
 
 

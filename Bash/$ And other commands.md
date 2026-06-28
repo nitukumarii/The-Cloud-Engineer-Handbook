@@ -10,6 +10,9 @@ Perform command substitution using $(command)
 
 
 
+"$@" → Separate arguments.
+"$*" → One combined string.
+
 
 
 | Variable | Meaning                         | Example Output                    |

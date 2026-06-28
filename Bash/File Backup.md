@@ -19,3 +19,6 @@ Options:
 -f → Specify the archive file
 
 
+<img width="357" height="245" alt="image" src="https://github.com/user-attachments/assets/e3c2d743-c638-49e3-9e88-b965195dad23" />
+
+

@@ -9,6 +9,9 @@ Access special shell variables (e.g., $?, $$, $1)
 Perform command substitution using $(command)
 
 
+
+
+
 | Variable | Meaning                         | Example Output                    |
 | -------- | ------------------------------- | --------------------------------- |
 | `$0`     | Script name                     | `backup.sh`                       |

@@ -1,6 +1,11 @@
 **Network Connectivity Checker**
 
 
+# Network Connectivity Checker
+
+## Script
+
+```bash
 #!/bin/bash
 
 host="example.com"
@@ -10,3 +15,6 @@ if ping -c 1 "$host" &>/dev/null; then
 else
     echo "Network is down."
 fi
+```
+
+---

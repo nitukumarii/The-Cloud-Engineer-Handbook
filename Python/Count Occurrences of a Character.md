@@ -96,7 +96,12 @@ for loop:
 
 
 
+
+
+
 def count_character(s, ch):
+
+
     count = 0
 
     for i in s:

@@ -11,6 +11,8 @@ Example:
 s = "cat"
 
 for letter in s:
+
+
     print(letter)
 
 Output:

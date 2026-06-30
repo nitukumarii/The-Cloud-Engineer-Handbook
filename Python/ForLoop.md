@@ -8,9 +8,13 @@ The variable can be almost any valid name you choose.
 
 Example:
 
+
+
 s = "cat"
 
-for letter in s:
+
+
+  for letter in s:
 
 
     print(letter)

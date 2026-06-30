@@ -2,11 +2,15 @@
 
 # Problem: Print all ERROR lines from a log file
 
+```python
+# Problem: Print all ERROR lines from a log file
+
 def error_lines(log_file):
     with open(log_file, "r") as file:
         for line in file:
             if "ERROR" in line:
                 print(line.strip())
+```
 
 
     ## `strip()` in Python

@@ -1,0 +1,300 @@
+# Python Interview Preparation (Highest Priority)
+
+Expect **live coding, debugging, and scripting** questions.
+
+## Python Fundamentals
+
+- Difference between List and Tuple
+- Dictionary vs Set
+- What are Decorators?
+- What are Generators?
+- Exception Handling
+- File Handling
+- Read a log file and print ERROR lines
+- Count occurrences of words
+- Reverse a string
+- Find duplicate lines
+- Parse JSON
+- Read CSV
+- Lambda Functions
+- List Comprehension
+- Classes vs Functions
+- Modules vs Packages
+- Virtual Environments
+- Debug this Python code
+- Why is this script failing?
+- Write a retry function
+
+---
+
+# Python Debugging
+
+Very likely to be asked.
+
+- How do you debug Python?
+- Read stack traces
+- Explain Traceback
+- Fix indentation errors
+- Import errors
+- ModuleNotFoundError
+- Memory leak debugging
+- Infinite loop debugging
+- Logging in Python
+- `pdb` debugger
+
+---
+
+# Practice Coding Problems
+
+- Parse log files
+- Count ERROR/WARNING/INFO occurrences
+- Extract IP addresses from logs
+- Find duplicate log entries
+- Read JSON and extract values
+- Read CSV and filter records
+- Merge dictionaries
+- Find frequency of words
+- Reverse words in a sentence
+- Remove duplicate items from a list
+- Find second largest number
+- Find missing number
+- Check palindrome
+- Fibonacci
+- Prime number
+- Factorial
+- Count vowels
+- Anagram check
+- Flatten nested list
+- Sort dictionary by values
+- Retry failed API calls
+
+---
+
+# File Handling
+
+- Read a file
+- Write to a file
+- Append to a file
+- Read line by line
+- Read large files efficiently
+- Using `with open()`
+- File modes (`r`, `w`, `a`, `rb`)
+- Exception handling while reading files
+
+---
+
+# Exception Handling
+
+- try
+- except
+- else
+- finally
+- raise
+- Custom Exceptions
+
+---
+
+# Collections
+
+- List
+- Tuple
+- Dictionary
+- Set
+- Frozen Set
+- Counter
+- defaultdict
+- deque
+
+---
+
+# Functions
+
+- Positional arguments
+- Keyword arguments
+- Default arguments
+- `*args`
+- `**kwargs`
+- Lambda
+- Recursion
+
+---
+
+# OOP
+
+- Class
+- Object
+- Constructor
+- Inheritance
+- Encapsulation
+- Polymorphism
+- Abstraction
+- Method Overriding
+- Method Overloading
+- Static Methods
+- Class Methods
+
+---
+
+# Modules
+
+- import
+- from ... import
+- Package
+- `__init__.py`
+- pip
+- venv
+
+---
+
+# Logging
+
+- logging module
+- Log levels
+- Logging to file
+- Formatting logs
+- Rotating logs
+
+---
+
+# Common Built-in Functions
+
+- len()
+- type()
+- isinstance()
+- enumerate()
+- zip()
+- map()
+- filter()
+- reduce()
+- sorted()
+- any()
+- all()
+- range()
+- sum()
+- max()
+- min()
+
+---
+
+# String Questions
+
+- Reverse string
+- Count characters
+- Remove duplicates
+- Split and join
+- Find substring
+- Replace text
+- Strip whitespace
+- String formatting
+
+---
+
+# Dictionary Questions
+
+- Merge dictionaries
+- Nested dictionary
+- Frequency count
+- Get values safely
+- Dictionary comprehension
+
+---
+
+# List Questions
+
+- List comprehension
+- Sorting
+- Filtering
+- Remove duplicates
+- Flatten nested list
+- Slice operations
+
+---
+
+# JSON
+
+- json.load()
+- json.loads()
+- json.dump()
+- json.dumps()
+
+---
+
+# CSV
+
+- csv.reader()
+- csv.DictReader()
+- csv.writer()
+
+---
+
+# Interview Debugging Scenarios
+
+- Script exits unexpectedly
+- Infinite loop
+- ImportError
+- ModuleNotFoundError
+- PermissionError
+- FileNotFoundError
+- KeyError
+- IndexError
+- TypeError
+- ValueError
+- NameError
+- SyntaxError
+- IndentationError
+
+---
+
+# Automation Questions
+
+- Parse log files
+- Health check script
+- Monitor disk usage
+- Check CPU utilization
+- Read API response
+- Send email alerts
+- Backup files
+- Rotate logs
+- Cleanup old files
+- Restart failed service
+
+---
+
+# APIs
+
+- requests library
+- GET
+- POST
+- PUT
+- DELETE
+- Headers
+- Authentication
+- JSON response
+- Status codes
+- Timeout
+- Retry
+
+---
+
+# Multithreading & Multiprocessing
+
+- Thread
+- Process
+- GIL
+- ThreadPoolExecutor
+- ProcessPoolExecutor
+
+---
+
+# Best Practices
+
+- PEP8
+- Virtual Environment
+- Requirements.txt
+- Logging
+- Exception Handling
+- Type Hints
+- Unit Testing
+- Docstrings
+
+---

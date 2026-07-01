@@ -264,26 +264,19 @@ ansible-playbook site.yml -vvv
 
 # Expected Interview Questions
 
-- What is Ansible?
-- Explain Ansible architecture.
-- Why Ansible instead of shell scripting?
-- What is an inventory?
-- Difference between Inventory and Playbook.
-- Explain YAML.
-- What are Modules?
-- Difference between `command` and `shell`.
-- What are Roles?
-- What are Handlers?
-- What is Idempotency?
-- What is Ansible Vault?
-- What are Facts?
-- Explain Templates.
-- Explain Variables.
-- What is `register`?
+- What is Ansible? Done
+- Explain Ansible architecture. Done
+- Why Ansible instead of shell scripting?  Done
+- What is an inventory ?  Done
+- Difference between Inventory and Playbook.  Done
+- Explain YAML. - dobe
+- What are Modules? done
+- Difference between `command` and `shell`. - Done
+- 
 - Explain `when` conditions.
 - Explain loops.
 - Explain Tags.
-- How do you debug a failed playbook?
+- How do you debug a failed playbook?  Done
 - How do you automate patching?
 - How do you deploy applications using Ansible?
 - How do you target only Production servers?

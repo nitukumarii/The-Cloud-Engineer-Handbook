@@ -30,3 +30,7 @@ ansible-inventory --list
 
 ansible all -m ping
 
+**Interview Flow**
+
+<img width="347" height="202" alt="image" src="https://github.com/user-attachments/assets/fbff9860-c36f-4507-a518-6c50a830b07d" />
+

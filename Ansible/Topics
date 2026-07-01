@@ -1,0 +1,292 @@
+# Ansible Interview Preparation Roadmap
+
+## Module 1: Ansible Fundamentals
+- What is Ansible?
+- Why use Ansible?
+- Benefits over shell scripts
+- Agentless architecture
+- Push vs Pull model
+- SSH authentication
+
+---
+
+## Module 2: Ansible Architecture
+- Control Node
+- Managed Nodes
+- Inventory
+- Modules
+- Plugins
+- Collections
+- Playbooks
+
+---
+
+## Module 3: Inventory
+- Static Inventory
+- Dynamic Inventory
+- Host Groups
+- Child Groups
+- Group Variables
+- Host Variables
+
+---
+
+## Module 4: Playbooks
+- YAML syntax
+- Tasks
+- Plays
+- Playbooks
+- Multiple plays
+- Execution order
+
+---
+
+## Module 5: Common Ansible Modules
+
+- command
+- shell
+- copy
+- file
+- template
+- service
+- yum
+- apt
+- package
+- user
+- group
+- git
+- cron
+- systemd
+- lineinfile
+- replace
+
+---
+
+## Module 6: Variables
+
+- vars
+- vars_files
+- group_vars
+- host_vars
+- register
+- set_fact
+- Extra Variables (`-e`)
+
+---
+
+## Module 7: Facts
+
+- Gathering Facts
+- ansible_facts
+- Using Facts
+- Disabling fact gathering
+
+---
+
+## Module 8: Conditionals
+
+- when
+- failed_when
+- changed_when
+
+---
+
+## Module 9: Loops
+
+- loop
+- with_items (legacy)
+- Loop over lists
+- Loop over dictionaries
+- Loop over files
+
+---
+
+## Module 10: Handlers
+
+- notify
+- handlers
+- Restart services only when needed
+
+---
+
+## Module 11: Templates
+
+- Jinja2
+- Variables in templates
+- Configuration generation
+
+---
+
+## Module 12: Roles
+
+- Role structure
+- defaults
+- vars
+- handlers
+- templates
+- files
+- tasks
+- meta
+
+---
+
+## Module 13: Tags
+
+- Running selected tasks
+- Skipping tasks
+
+---
+
+## Module 14: Ansible Vault
+
+- Encrypt variables
+- Encrypt files
+- Vault password
+- Production secrets
+
+---
+
+## Module 15: Idempotency
+
+- Definition
+- Why it is important
+- Idempotent modules
+- Why `shell` isn't always idempotent
+
+---
+
+## Module 16: Error Handling
+
+- ignore_errors
+- failed_when
+- block
+- rescue
+- always
+
+---
+
+## Module 17: Debugging
+
+- `ansible-playbook --check`
+- `ansible-playbook --diff`
+- `ansible-playbook -vvv`
+- debug module
+- Syntax check
+
+---
+
+## Module 18: Ansible Galaxy
+
+- Installing Roles
+- Collections
+- Reusing code
+
+---
+
+## Module 19: Best Practices
+
+- Reusable playbooks
+- Small roles
+- Variables
+- Secrets
+- Version control
+- Testing
+
+---
+
+# Practical Playbooks
+
+Be able to write playbooks for:
+
+- Ping all servers
+- Install Apache/Nginx
+- Install multiple packages
+- Create users
+- Create groups
+- Copy files
+- Generate configuration from templates
+- Restart services using handlers
+- Enable services
+- Deploy an application
+- Clone a Git repository
+- Update Linux packages
+- Reboot servers
+- Create directories
+- Delete files
+- Run shell commands
+- Configure cron jobs
+- Patch multiple servers
+
+---
+
+# Production Scenarios
+
+Practice explaining how you would:
+
+- Patch 500 Linux servers using Ansible
+- Deploy an application to multiple environments
+- Roll back a failed deployment
+- Restart only affected services after configuration changes
+- Use variables for Development, QA, and Production
+- Encrypt database passwords using Ansible Vault
+- Troubleshoot a failed playbook
+- Create a reusable Nginx Role
+- Use Tags to patch only Production servers
+- Perform a dry run using `--check`
+
+---
+
+# Interview Commands to Remember
+
+```bash
+ansible all -m ping
+
+ansible-inventory --list
+
+ansible-playbook site.yml
+
+ansible-playbook site.yml --check
+
+ansible-playbook site.yml --diff
+
+ansible-playbook site.yml --limit web
+
+ansible-playbook site.yml --tags install
+
+ansible-playbook site.yml --skip-tags restart
+
+ansible-playbook site.yml -e "env=prod"
+
+ansible-playbook site.yml -vvv
+```
+
+---
+
+# Expected Interview Questions
+
+- What is Ansible?
+- Explain Ansible architecture.
+- Why Ansible instead of shell scripting?
+- What is an inventory?
+- Difference between Inventory and Playbook.
+- Explain YAML.
+- What are Modules?
+- Difference between `command` and `shell`.
+- What are Roles?
+- What are Handlers?
+- What is Idempotency?
+- What is Ansible Vault?
+- What are Facts?
+- Explain Templates.
+- Explain Variables.
+- What is `register`?
+- Explain `when` conditions.
+- Explain loops.
+- Explain Tags.
+- How do you debug a failed playbook?
+- How do you automate patching?
+- How do you deploy applications using Ansible?
+- How do you target only Production servers?
+- How do you make playbooks reusable?
+- How would you patch 500 servers?
+- How do you perform a dry run before deployment?

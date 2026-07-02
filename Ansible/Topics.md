@@ -223,8 +223,8 @@ Be able to write playbooks for:
 
 Practice explaining how you would:
 
-- Patch 500 Linux servers using Ansible
-- Deploy an application to multiple environments
+- Patch 500 Linux servers using Ansible - Done
+- Deploy an application to multiple environments - Done
 - Roll back a failed deployment
 - Restart only affected services after configuration changes
 - Use variables for Development, QA, and Production

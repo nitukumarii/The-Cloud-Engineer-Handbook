@@ -169,27 +169,47 @@
 
 ## 🟦 Behavioral / Real Scenarios (131–150)
 
-131. Tell me about a production outage you handled.
-132. Tell me about a time you learned a new technology quickly.
-133. Describe a conflict with a team member and how you handled it.
-134. How do you manage multiple priorities?
-135. Describe a time you automated a repetitive task.
-136. Tell me about a creative technical solution you built.
-137. Describe working with security teams.
-138. Tell me about a design disagreement and how you handled it.
-139. Describe an on-call incident experience.
-140. Tell me about a failure and what you learned.
-141. How do you explain technical issues to non-technical people?
-142. Describe a situation with incomplete information.
-143. Tell me about leading a project.
-144. Describe cross-team collaboration.
-145. Tell me about performance optimization work.
-146. Describe implementing changes with minimal downtime.
-147. Tell me about proactive risk mitigation.
-148. Describe handling a high-severity incident.
-149. Tell me about mentoring someone.
-150. How do you stay updated with new technologies?
+# 🟦 Behavioral & Production Scenarios (JRD Systems)
 
+1. Tell me about a P1 production incident you handled from start to finish.
+
+2. Describe the most challenging production outage you've resolved.
+
+3. Tell me about a time you automated a repetitive operational task using Ansible, Bash, or Python.
+
+4. Describe a production deployment that failed. How did you investigate and recover the service?
+
+5. Tell me about a production issue where you performed Root Cause Analysis (RCA).
+
+6. Describe an on-call incident where you restored a critical production service.
+
+7. Tell me about a time you worked with developers to resolve a production issue.
+
+8. Describe a situation where you had to troubleshoot an issue with limited information.
+
+9. Tell me about a production change that had to be implemented with minimal or zero downtime.
+
+10. Describe a production patching activity you were involved in.
+
+11. Tell me about a time you prevented a recurring production issue through automation or monitoring improvements.
+
+12. Describe a situation where monitoring tools such as Splunk, Dynatrace, or CloudWatch helped you identify the root cause.
+
+13. Tell me about a performance issue you investigated in production.
+
+14. Describe a situation where infrastructure was healthy but the application was failing. How did you identify the root cause?
+
+15. Tell me about a time you handled multiple production incidents simultaneously. How did you prioritize them?
+
+16. Describe your experience working with security teams during certificate renewals, vulnerability remediation, or production changes.
+
+17. Tell me about a production rollback you performed. Why was rollback chosen instead of fixing the application?
+
+18. Describe a time when you improved system reliability or reduced MTTR.
+
+19. Tell me about a production incident that taught you an important lesson.
+
+20. Why do you think you're a good fit for this Application Support Engineer role at JRD Systems?
 ---
 
 # 🎯 One-Line Summary

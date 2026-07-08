@@ -382,3 +382,14 @@
 382. Why is UDP faster than TCP?
 383. How would you troubleshoot a scenario where `curl` connects to an NLB but does not return the expected Nginx response?
 384. Describe a situation where you had to learn a new technology quickly and successfully implement it (STAR format).
+385. 385. Why do we use variables in Terraform?
+386. Why do we use `terraform.tfvars` instead of hardcoding values?
+387. What is the Terraform state file?
+388. Where is the Terraform state file stored?
+389. How do you provision multiple EC2 instances using Terraform?
+390. How do you create EC2 instances for different environments (Dev/QA/Prod)?
+391. How do you use Terraform modules?
+392. What happens if `terraform apply` fails?
+393. How do you import an existing EC2 instance into Terraform?
+394. How do you prevent accidental deletion of a production EC2 instance?
+```

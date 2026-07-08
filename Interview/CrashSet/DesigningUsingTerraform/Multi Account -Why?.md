@@ -1,0 +1,1 @@
+We use multiple AWS accounts mainly for Isolation, Security, Governance, Better Billing, Scalability, and Compliance. For example, Development, Test, and Production are kept in separate accounts so developers cannot accidentally impact production, costs are tracked independently, and organization-wide security policies can be enforced.

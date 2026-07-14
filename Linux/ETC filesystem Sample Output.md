@@ -460,6 +460,27 @@ gpgcheck=1
 
 ## 19. /etc/apt/ (Ubuntu/Debian)
 
+# `/etc/apt/` (Ubuntu/Debian)
+
+**Definition:**
+`/etc/apt/` contains **APT package manager configuration** files used to manage software packages.
+
+## Important Files
+
+| Path | Purpose |
+|---|---|
+| `/etc/apt/sources.list` | Software repository URLs |
+| `/etc/apt/sources.list.d/` | Additional repositories |
+| `/etc/apt/apt.conf.d/` | APT settings |
+
+## Commands
+
+```bash
+apt update     # Refresh package list
+apt install    # Install packages
+apt upgrade    # Update packages
+```
+
 ```bash
 ls /etc/apt
 ```

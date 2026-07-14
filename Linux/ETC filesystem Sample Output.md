@@ -157,6 +157,8 @@ database-server → 10.10.1.20
 ## 6. /etc/resolv.conf
 **Purpose:** DNS resolver configuration
 
+/etc/resolv.conf contains the IP addresses of DNS resolver servers that your machine will query.
+
 ```bash
 cat /etc/resolv.conf
 ```

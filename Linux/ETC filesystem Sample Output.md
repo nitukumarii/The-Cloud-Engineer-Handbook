@@ -98,6 +98,61 @@ Output:
 ```
 
 ---
+# Difference Between `/etc/hostname` and `/etc/hosts`
+
+| File | Purpose | Example |
+|------|---------|---------|
+| `/etc/hostname` | Stores the **system's own hostname** | `prod-web-server-01` |
+| `/etc/hosts` | Maps **hostnames to IP addresses locally** | `10.10.1.20 database-server` |
+
+## `/etc/hostname`
+
+- Defines the name of the machine.
+- Used during system boot to set the hostname.
+
+Example:
+
+```bash
+cat /etc/hostname
+
+Output
+
+prod-web-server-01
+
+# `/etc/hosts` Example
+
+## Check Hosts File
+
+```bash
+cat /etc/hosts
+```
+
+Output:
+
+```
+127.0.0.1       localhost
+10.10.1.20      database-server
+10.10.1.30      app-server
+```
+
+## Scenario
+
+- Testing before DNS setup
+- Mapping internal servers
+- Troubleshooting name resolution issues
+
+## Test Name Resolution
+
+```bash
+ping database-server
+```
+
+Linux resolves:
+
+```
+database-server → 10.10.1.20
+```
+
 
 ## 6. /etc/resolv.conf
 **Purpose:** DNS resolver configuration
@@ -118,6 +173,8 @@ search company.local
 
 ## 7. /etc/fstab
 **Purpose:** Filesystem mount configuration
+
+It tells Linux: Which disk/partition to mount, where to mount it, what filesystem type it uses, and what options to apply during boot.
 
 ```bash
 cat /etc/fstab

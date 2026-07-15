@@ -392,4 +392,55 @@
 392. What happens if `terraform apply` fails?
 393. How do you import an existing EC2 instance into Terraform?
 394. How do you prevent accidental deletion of a production EC2 instance?
+395. 385. Why do we use variables in Terraform?
+
+386. Why do we use `terraform.tfvars` instead of hardcoding values?
+
+387. What is the Terraform state file?
+
+388. Where is the Terraform state file stored?
+
+389. How do you provision multiple EC2 instances using Terraform?
+
+390. How do you create EC2 instances for different environments (Dev/QA/Prod)?
+
+391. How do you use Terraform modules?
+
+392. What happens if `terraform apply` fails?
+
+393. How do you import an existing EC2 instance into Terraform?
+
+394. How do you prevent accidental deletion of a production EC2 instance?
+
+395. Terraform Modules vs Workspaces.
+
+396. How do you handle secrets in Terraform?
+
+397. How do you perform a Terraform rollback?
+
+398. How do you version Terraform modules?
+
+399. What are the Terraform best practices?
+
+400. What AWS components would you use for Disaster Recovery (DR)?
+
+401. What are RTO and RPO?
+
+402. What are SLI, SLO, and SLA?
+
+403. What is an Ansible Playbook?
+
+404. Explain Ansible Roles.
+
+405. Write an Ansible playbook to:
+- Spin up an EC2 instance.
+- Install Nginx.
+- Restart the Nginx service.
+- Explain each component (Playbook, Role, Task, Module, Handler, Variables, Template).
+
+406. Explain the Ansible Architecture.
+
+407. How do you automate Linux patching using Ansible?
+
+408. Have you ever used Ansible to provision (spin up) an EC2 instance?
 ```

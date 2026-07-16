@@ -34,20 +34,21 @@ kubectl get ingress -n payment
 kubectl describe ingress payment-ingress -n payment
 
 
-```
+```bash
 
 I noticed that the AWS Application Load Balancer was marking some backend targets as unhealthy.
 
 I then checked pod health status:
 
 ```bash
+
 kubectl describe pod <pod-name> -n payment
 
-```
+```bash
 
 I first ran kubectl describe pod, which showed repeated readiness probe timeout events. I then checked the application logs using kubectl logs 
 
-```bash
+
 
 kubectl logs payment-abc -n payment
 

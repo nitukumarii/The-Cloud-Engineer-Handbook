@@ -45,7 +45,17 @@ kubectl describe pod <pod-name> -n payment
 
 ```
 
-The investigation showed that the health check endpoint was responding slowly because the application was performing an expensive dependency check during startup.
+I first ran kubectl describe pod, which showed repeated readiness probe timeout events. I then checked the application logs using kubectl logs 
+
+```bash
+
+kubectl logs payment-abc -n payment
+
+```bash
+
+
+and found that the /health endpoint was performing database and external dependency checks before returning a response. After discussing it with the application team, we confirmed that these dependency checks were causing the readiness probe to exceed the Load Balancer timeout.
+
 
 Due to this, the load balancer removed healthy pods from rotation, leaving insufficient backend capacity to handle production traffic.
 

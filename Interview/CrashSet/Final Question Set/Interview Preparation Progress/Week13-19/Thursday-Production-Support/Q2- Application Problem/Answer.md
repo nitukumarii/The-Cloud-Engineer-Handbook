@@ -2,6 +2,16 @@
 
 
 
+
+
+
+<img width="596" height="297" alt="image" src="https://github.com/user-attachments/assets/7db8c0a0-0f0f-4d61-a3cf-eb4d0c5bd28a" />
+
+
+
+
+
+
 ### 1. Confirm impact
       ↓
 ### 2. Check monitoring & alerts

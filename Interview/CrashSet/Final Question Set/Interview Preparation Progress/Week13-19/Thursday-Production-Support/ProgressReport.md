@@ -15,15 +15,15 @@ Prepare production support scenarios and build interview-ready answers.
 
 | No | Question | Answer Created | Practiced | Confidence |
 |----|----------|----------------|-----------|------------|
-| 1 | Describe a major production incident you handled | ✅ | ✅ | 8/10 |
-| 2 | How do you troubleshoot an application outage? | ❌ | ❌ | - |
+| 1 | Describe a major production incident you handled | ✅ | ✅ | 5/10 |
+| 2 | How do you troubleshoot an application outage? | ✅ | ✅ | 6/10 |
 | 3 |  Application cannot connect to database — how do you troubleshoot it? | ❌ | ❌ | - |
-| 4 | Application is slow — how do you investigate?  | ❌ | ❌ | - |
-| 5 | How do you troubleshoot high CPU? | ❌ | ❌ | - |
-| 6 | How do you troubleshoot memory issues? | ❌ | ❌ | - |
-| 7 | Disk is full — how do you troubleshoot it? | ❌ | ❌ | - |
+| 4 | Application is slow — how do you investigate?  | ✅ | ✅ | 6/10  |
+| 5 | How do you troubleshoot high CPU? | ✅ | ❌ | - |
+| 6 | How do you troubleshoot memory issues? | ✅ | ❌ | - |
+| 7 | Disk is full — how do you troubleshoot it? | ✅ | ❌ | - |
 | 8 | DNS resolution is failing — how do you troubleshoot it? | ❌ | ❌ | - |
-| 9 | Load Balancer reports unhealthy targets — what would you check? | ❌ | ❌ | - |
+| 9 | Load Balancer reports unhealthy targets — what would you check? | ✅ | ✅ | 7/10 |
 | 10 | Infrastructure is healthy but application is failing — how do you identify root cause? | ❌ | ❌ | - |
 
 
@@ -63,13 +63,13 @@ Project:
 
 ## Weak Areas
 
--
--
+- trying to by heart
+- i waste time in between completion - checking reel
 
 
 ## Next Revision
 
-Date:
+Date: 17/7/2026
 
 Questions to revise:
 

@@ -27,12 +27,13 @@ Since the application containers looked healthy, I moved my investigation to the
 I checked Kubernetes services and ingress configuration:
 
 ```bash
+
+
 kubectl get svc -n payment
 
 kubectl get ingress -n payment
 
 kubectl describe ingress payment-ingress -n payment
-
 
 ```bash
 
@@ -46,9 +47,11 @@ kubectl describe pod <pod-name> -n payment
 
 ```bash
 
+
+
 I first ran kubectl describe pod, which showed repeated readiness probe timeout events. I then checked the application logs using kubectl logs 
 
-
+```bash
 
 kubectl logs payment-abc -n payment
 

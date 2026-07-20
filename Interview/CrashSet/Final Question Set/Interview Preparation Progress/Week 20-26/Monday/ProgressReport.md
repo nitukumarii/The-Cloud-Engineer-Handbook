@@ -1,9 +1,6 @@
-# Week 2 - Monday 
+# Week 2 - Monday
 
-## Repeating Week 1 - Friday
-Reason: No work completed from 17/07/2026 – 19/07/2026 due to illness.
-
-# Category: Production Support
+## Category: Production Support
 
 Date: 20/07/2026  
 Topic: Production Troubleshooting & Incident Investigation
@@ -24,10 +21,10 @@ Focus on:
 
 | No | Question | Answer Created | Practiced | Confidence |
 |----|----------|----------------|-----------|------------|
-| 1 | Application cannot connect to database — how do you troubleshoot it? | ❌ | ❌ | - |
-| 2 | DNS resolution is failing — how do you troubleshoot it? | ❌ | ❌ | - |
-| 3 | Infrastructure is healthy but application is failing — how do you identify root cause? | ❌ | ❌ | - |
-| 4 | How do you troubleshoot high CPU? (Revision) | ✅ | 🟡 | 6/10 |
+| 1 | Application cannot connect to database — how do you troubleshoot it? | ✅ | ✅ | 7/10 |
+| 2 | DNS resolution is failing — how do you troubleshoot it? | ✅ | ✅ | 6/10 |
+| 3 | Infrastructure is healthy but application is failing — how do you identify root cause? | ✅ | ✅ | 6/10 |
+| 4 | How do you troubleshoot high CPU? (Revision) | ✅ | ✅ | 5/10 |
 | 5 | How do you troubleshoot memory issues? (Revision) | ✅ | 🟡 | 6/10 |
 | 6 | Disk is full — how do you troubleshoot it? (Revision) | ✅ | 🟡 | 6/10 |
 | 7 | Describe a major production incident you handled (Revision) | ✅ | 🟡 | 6/10 |
@@ -39,37 +36,38 @@ Focus on:
 ## Practice Status Legend
 
 ✅ = Completed / Explained without major help  
-🟡 = Practiced but need improvement  
+🟡 = Practiced but needs improvement  
 ❌ = Not started  
 
 
-5/10 → I understand
+## Today's Achievement
 
-7/10 → I can explain
+Completed:
+- 3 new production troubleshooting scenarios
+- Revised 7 previously prepared scenarios
+- Improved understanding of troubleshooting flow
 
-8/10 → Interview ready
-
-9/10 → Strong senior answer
-
-
-## Key Concepts To Reinforce
-
-- Do not jump directly to commands.
-- Start with:
-  1. Understand impact
-  2. Check monitoring
-  3. Identify affected layer
-  4. Collect evidence
-  5. Mitigate issue
-  6. RCA and prevention
-
-- Explain:
-  - Why you check a metric
-  - Why you check a log
-  - Why you choose a particular command
+Total questions prepared:
+- 10/10
 
 
-## Commands To Practice
+## Key Concepts Learned
+
+- Start troubleshooting with impact assessment, not commands.
+- Identify the affected layer before deep investigation.
+
+Troubleshooting flow:
+
+1. Understand impact
+2. Check monitoring
+3. Identify affected layer
+4. Collect evidence
+5. Mitigate issue
+6. Validate recovery
+7. RCA and prevention
+
+
+## Commands Revised
 
 - top
 - ps aux
@@ -89,7 +87,7 @@ Focus on:
 ### Mastercard
 
 Incident Example:
-- 
+- Pending final mapping
 
 Tools Used:
 - Dynatrace
@@ -106,56 +104,67 @@ Resolution:
 
 ## Weak Areas
 
-- Avoid memorizing answers word-by-word
-- Improve speaking without looking at notes
-- Avoid distractions during preparation
-- Complete one answer before moving to another topic
-
-## Interview Readiness
-
-Questions Interview Ready (8+/10)
-
--
-
-Questions Needing More Practice
-
--
-
-Questions Not Started
-
--
+- Need more confidence while explaining answers verbally
+- Avoid memorizing complete paragraphs
+- Need more practice connecting troubleshooting steps with tools
+- High CPU answer needs more confidence
 
 
-## End Of Day Review
+## Today's Reflection
 
-Questions completed:
+### Wins:
+- Completed planned production support questions
+- Built answers for database, DNS, and application troubleshooting
+- Maintained progress despite restarting preparation after illness
 
-- 
 
-Questions needing revision:
+### Challenges:
+- Preparation takes longer because I am trying to make answers perfect
+- Need to focus on understanding flow instead of memorizing
 
-- 
+
+### Improvement For Next Session:
+- Practice speaking answers naturally
+- Focus on 3 new questions instead of many new topics
 
 
 ## Next Revision
 
 Date: 21/07/2026
 
-Questions to revise:
-
--
+Plan:
 
 
-## Daily Reflection
+### Revision Questions
 
-Today's Wins
+- Describe a major production incident you handled
+- How do you troubleshoot an application outage?
+- Application is slow — how do you investigate?
+- How do you troubleshoot high CPU?
+- How do you troubleshoot memory issues?
+- Disk is full — how do you troubleshoot it?
+- DNS resolution is failing — how do you troubleshoot it?
+- Load Balancer reports unhealthy targets — what would you check?
 
--
 
-Biggest Challenge
+### New Questions
 
--
+- SSL certificate expired in production — what steps would you take?
+- APIs are timing out — how do you troubleshoot?
+- Application reports "Connection Refused" — what could be the possible causes?
 
-Tomorrow's Focus
 
--
+### Practice Goal
+
+- Speak answers without reading notes
+- Focus on troubleshooting flow:
+  - Impact
+  - Monitoring
+  - Isolation
+  - Evidence collection
+  - Mitigation
+  - Validation
+  - RCA
+- Revise today's weak answers
+- Add limited new production scenarios
+- Continue improving interview speaking confidence

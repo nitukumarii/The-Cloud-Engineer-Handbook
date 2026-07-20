@@ -50,6 +50,11 @@ If any step fails, DNS resolution fails.
 
 ---
 
+When an application requests a hostname, Linux uses the resolver library and checks the lookup order defined in /etc/nsswitch.conf. Typically it checks /etc/hosts first, and if no entry exists, it uses the DNS servers configured in /etc/resolv.conf to resolve the hostname. Once the IP address is returned, the application establishes the connection.
+
+<img width="401" height="310" alt="image" src="https://github.com/user-attachments/assets/8f1262e1-1381-4c87-ad52-50fb9275cd7a" />
+
+
 # Interview Troubleshooting Flow
 
 Always troubleshoot in this order:

@@ -33,15 +33,15 @@ Prepare high-impact SRE production support scenarios focusing on:
 
 | No | Question | Answer Created | Practiced | Confidence |
 |----|----------|----------------|-----------|------------|
-| 1 | Tell me about yourself | ❌ | ❌ | - |
-| 2 | Describe your production environment | ❌ | ❌ | - |
-| 3 | Explain the last application you worked on at Mastercard - flow, upstream, downstream | ❌ | ❌ | - |
-| 4 | What was your major role in Mastercard project? | ❌ | ❌ | - |
-| 5 | Describe a major P1 production incident you handled | ❌ | ❌ | - |
-| 6 | Tell me about a Sev1 incident | ❌ | ❌ | - |
-| 7 | How do you troubleshoot an application outage? | ✅ | 🟡 | 7/10 |
-| 8 | Infrastructure is healthy but application is failing - how do you investigate? | ✅ | 🟡 | 6/10 |
-| 9 | Application is slow - how do you investigate? | ✅ | 🟡 | 7/10 |
+| 1 | Tell me about yourself | ✅ | ✅ |  8/10 |
+| 2 | Describe your production environment | ✅ | ✅ |  7/10 |
+| 3 | Explain the last application you worked on at Mastercard - flow, upstream, downstream | ✅ | ✅ |  7/10 |
+| 4 | What was your major role in Mastercard project? | ✅ | ✅ |  7/10 |
+| 5 | Describe a major P1 production incident you handled | ✅ | ✅ |  7/10 |
+| 6 | Tell me about a Sev1 incident | ✅ | ✅ |  7/10 |
+| 7 | How do you troubleshoot an application outage? | ✅ |  ✅  | 8/10 |
+| 8 | Infrastructure is healthy but application is failing - how do you investigate? | ✅ |  ✅  | 8/10 |
+| 9 | Application is slow - how do you investigate? | ✅ |  ✅  | 7/10 |
 | 10 | How do you troubleshoot increased API latency using Grafana? | ❌ | ❌ | - |
 | 11 | Kubernetes application has high latency - which Linux commands do you use? | ❌ | ❌ | - |
 | 12 | Pod crashes during P1 incident - troubleshooting approach | ❌ | ❌ | - |
@@ -52,12 +52,12 @@ Prepare high-impact SRE production support scenarios focusing on:
 | 17 | DNS resolution failure troubleshooting | ✅ | 🟡 | 6/10 |
 | 18 | Load balancer unhealthy targets troubleshooting | ✅ | 🟡 | 7/10 |
 | 19 | Database connection timeout troubleshooting | ✅ | 🟡 | 7/10 |
-| 20 | EC2 to RDS connectivity troubleshooting | ❌ | ❌ | - |
-| 21 | SQL/RDBMS experience explanation | ❌ | ❌ | - |
-| 22 | Identify blocking processes in SQL | ❌ | ❌ | - |
-| 23 | Production database backup precautions | ❌ | ❌ | - |
-| 24 | Certificate management issue handled | ❌ | ❌ | - |
-| 25 | Monitoring tools experience (Splunk, Dynatrace, CloudWatch, Grafana) | ❌ | ❌ | - |
+| 20 | EC2 to RDS connectivity troubleshooting | ✅ | ✅ |  8/10 |
+| 21 | SQL/RDBMS experience explanation | ✅ | ✅ |  8/10 |
+| 22 | Identify blocking processes in SQL | ✅ | ✅ |  7/10 |
+| 23 | Production database backup precautions |✅ | ✅ |  8/10 |
+| 24 | Certificate management issue handled | ✅ | ✅ |  8.5/10 |
+| 25 | Monitoring tools experience (Splunk, Dynatrace, CloudWatch, Grafana) | ✅ | ✅ |  8/10 |
 | 26 | How do you reduce alert fatigue? | ❌ | ❌ | - |
 | 27 | Splunk search vs stats vs eval | ❌ | ❌ | - |
 | 28 | How do you collect and analyze logs? | ❌ | ❌ | - |

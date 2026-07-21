@@ -6,13 +6,17 @@ The last application I worked on at Mastercard was a **payment file transfer pla
 
 The main purpose of the platform was to securely exchange payment files between Mastercard and partner banks. Mastercard acted as a mediator between the consumer systems and banking partners.
 
-The high-level flow was:
+## High-Level Application Flow
 
-**Consumer / Client System**
-↓
-**Mastercard Payment Platform (IBM Sterling + Application Services)**
-↓
-**Partner Bank Systems**
+```text
+Consumer / Client System
+        |
+        ↓
+Mastercard Payment Platform
+(IBM Sterling + Application Services)
+        |
+        ↓
+Partner Bank Systems
 
 The upstream systems were the consumer applications or client systems that generated and sent payment files or transaction requests to our platform.
 

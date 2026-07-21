@@ -2,9 +2,9 @@
 
 ## Situation
 
-While working as an SRE at Mastercard, we faced a P1 incident where a production certificate used for secure communication with an external partner was approaching expiry and caused transaction failures.
+While working as an SRE at Mastercard, we faced a P1 incident where a production certificate used for secure communication with an external partner had expired, causing certificate validation failures and transaction processing issues.
 
-The monitoring alerts showed increased failed transactions, and some file transfer requests were failing because the certificate validation was unsuccessful.
+The monitoring alerts showed increased transaction failures, and some file transfer requests were failing because the application was unable to establish secure communication with the external system.
 
 ---
 
@@ -16,33 +16,22 @@ As the SRE on-call, my responsibility was to identify the impact, coordinate wit
 
 ## Action
 
-- I acknowledged the P1 alert and joined the incident bridge.
-- I checked Dynatrace dashboards to understand the transaction impact and failure pattern.
-- I reviewed Splunk logs and identified certificate validation errors during communication with the external system.
-- I verified the certificate expiry details and confirmed that the issue was related to the expired/invalid certificate.
-- I coordinated with the certificate management team and application team to deploy the renewed certificate.
-- After the certificate update, I validated the application connectivity and monitored transaction success rate, logs, and application health.
-
----
-
-
-## Action
-
 I acknowledged the P1 alert and joined the incident bridge.
 
-I first checked Dynatrace dashboards to understand the impact, such as the affected service, transaction failures, and when the issue started.
+I first checked Dynatrace dashboards to understand the impact, such as the affected service, transaction failures, error rate, and when the issue started.
 
-I then reviewed Splunk logs to identify the exact error and found certificate validation failures while communicating with the external system.
+I then reviewed Splunk logs to identify the exact error details and found certificate validation failures and SSL communication errors while connecting with the external system.
 
-I verified the certificate details, including expiry and validity, and confirmed that the issue was related to the certificate.
+I verified the certificate details, including expiry date and validity, and confirmed that the certificate had expired, which was causing the communication failure.
 
-I coordinated with the certificate management and application teams to renew and deploy the updated certificate.
+I coordinated with the certificate management and application teams to renew and deploy the updated certificate through the required change process.
 
-After the certificate update, I validated the application connectivity and monitored transaction success rate, application health, and logs to confirm the issue was resolved.
+After the certificate update, I validated application connectivity, monitored transaction success rate, application health, and logs to confirm that the issue was resolved.
 
+---
 
 ## Result
 
 The certificate was successfully renewed and deployed, transaction processing recovered, and the service was restored within the SLA.
 
-As a preventive measure, we improved certificate expiry monitoring and renewal tracking to avoid similar incidents in the future.
+As a preventive measure, we improved certificate expiry monitoring, renewal tracking, and alerting processes to avoid similar incidents in the future.

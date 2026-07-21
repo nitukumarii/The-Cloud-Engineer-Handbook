@@ -74,15 +74,15 @@ Prepare high-impact SRE production support scenarios focusing on:
 | 39 | Terraform state | ✅ | ✅ |  8/10 |
 | 40 | AWS production issue resolved |  ✅ | ✅ |  8/10 |
 | 41 | AWS observability services | ✅ | ✅ |  6/10 |
-| 42 | AWS security best practices | ❌ | ❌ | - |
-| 43 | Error Budget explanation | ❌ | ❌ | - |
-| 44 | SLI, SLO, SLA explanation | ❌ | ❌ | - |
-| 45 | How do you reduce MTTR? | ❌ | ❌ | - |
-| 46 | Explain SRE toil | ❌ | ❌ | - |
-| 47 | What operational activities can you automate? | ❌ | ❌ | - |
-| 48 | Change Management vs Problem Management | ❌ | ❌ | - |
+| 42 | AWS security best practices | ✅ | ✅ |  8/10 |
+| 43 | Error Budget explanation | ✅ | ✅ |  8/10 |
+| 44 | SLI, SLO, SLA explanation |  ✅ | ✅ |  8/10 |
+| 45 | How do you reduce MTTR? | ✅ | ✅ |  6/10 |
+| 46 | Explain SRE toil |  ✅ | ✅ |  6/10 |
+| 47 | What operational activities can you automate? | ✅ | ✅ |  8.5/10 |
+| 48 | Change Management vs Problem Management | ✅ | ✅ |  8.5/10 |
 | 49 | CVRT incident understanding | ❌ | ❌ | - |
-| 50 | How do you ensure recurring incidents are permanently resolved? | ❌ | ❌ | - |
+| 50 | How do you ensure recurring incidents are permanently resolved? | ✅ | ✅ |  8/10 |
 
 
 ---

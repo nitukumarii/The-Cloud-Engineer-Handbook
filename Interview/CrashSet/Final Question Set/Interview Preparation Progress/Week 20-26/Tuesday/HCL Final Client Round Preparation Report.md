@@ -62,18 +62,18 @@ Prepare high-impact SRE production support scenarios focusing on:
 | 27 | Splunk search vs stats vs eval |  ✅ | ✅ |  8/10 |
 | 28 | How do you collect and analyze logs? |  ✅ | ✅ |  8.5/10 |
 | 29 | Jenkins pipeline issue handled | ✅ | ✅ |  7.5/10 |
-| 30 | How do you handle production deployments? | ❌ | ❌ | - |
-| 31 | How do you handle failed deployments? | ❌ | ❌ | - |
-| 32 | Blue-Green vs Canary deployment | ❌ | ❌ | - |
-| 33 | CI/CD pipeline design | ❌ | ❌ | - |
-| 34 | Why Ansible instead of shell scripting? | ❌ | ❌ | - |
-| 35 | Explain Ansible playbook | ❌ | ❌ | - |
-| 36 | Explain Ansible roles | ❌ | ❌ | - |
-| 37 | Automate patching using Ansible | ❌ | ❌ | - |
-| 38 | Terraform workflow | ❌ | ❌ | - |
-| 39 | Terraform state | ❌ | ❌ | - |
-| 40 | AWS production issue resolved | ❌ | ❌ | - |
-| 41 | AWS observability services | ❌ | ❌ | - |
+| 30 | How do you handle production deployments? | ✅ |  ✅  | 7/10 |
+| 31 | How do you handle failed deployments? |  ✅ | ✅ |  8.5/10 |
+| 32 | Blue-Green vs Canary deployment | ✅ | ✅ |  8.5/10 |
+| 33 | CI/CD pipeline design | 8.5/10 |
+| 34 | Why Ansible instead of shell scripting? | ✅ | ✅ |  8/10 |
+| 35 | Explain Ansible playbook | ✅ | ✅ |  8/10 |
+| 36 | Explain Ansible roles | ✅ | ✅ |  8/10 |
+| 37 | Automate patching using Ansible | ✅ | ✅ |  8/10 |
+| 38 | Terraform workflow | ✅ | ✅ |  8/10 |
+| 39 | Terraform state | ✅ | ✅ |  8/10 |
+| 40 | AWS production issue resolved |  ✅ | ✅ |  8/10 |
+| 41 | AWS observability services | ✅ | ✅ |  6/10 |
 | 42 | AWS security best practices | ❌ | ❌ | - |
 | 43 | Error Budget explanation | ❌ | ❌ | - |
 | 44 | SLI, SLO, SLA explanation | ❌ | ❌ | - |

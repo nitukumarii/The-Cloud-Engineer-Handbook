@@ -25,6 +25,22 @@ As the SRE on-call, my responsibility was to identify the impact, coordinate wit
 
 ---
 
+
+## Action
+
+I acknowledged the P1 alert and joined the incident bridge.
+
+I first checked Dynatrace dashboards to understand the impact, such as the affected service, transaction failures, and when the issue started.
+
+I then reviewed Splunk logs to identify the exact error and found certificate validation failures while communicating with the external system.
+
+I verified the certificate details, including expiry and validity, and confirmed that the issue was related to the certificate.
+
+I coordinated with the certificate management and application teams to renew and deploy the updated certificate.
+
+After the certificate update, I validated the application connectivity and monitored transaction success rate, application health, and logs to confirm the issue was resolved.
+
+
 ## Result
 
 The certificate was successfully renewed and deployed, transaction processing recovered, and the service was restored within the SLA.

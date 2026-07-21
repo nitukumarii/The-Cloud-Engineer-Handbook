@@ -12,3 +12,24 @@ I have also worked with AWS database services like RDS at an infrastructure leve
 
 For database-related incidents, my approach is to check application logs first, validate database connectivity, review error messages, check resource
 utilization, and coordinate with the DBA team if deeper database investigation is required.
+
+
+
+
+
+### Which databases have you worked with?
+
+I have mainly worked with relational databases like MySQL/PostgreSQL from an application support and troubleshooting perspective. 
+My primary responsibility was not database administration, but supporting applications that depended on these databases.
+
+
+
+### Do you write SQL queries?
+
+
+Yes, I have used basic SQL queries for troubleshooting purposes, such as checking transaction records, validating application data, 
+and identifying failed or pending transactions.
+
+
+
+

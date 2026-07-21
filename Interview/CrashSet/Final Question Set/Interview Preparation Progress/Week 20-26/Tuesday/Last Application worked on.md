@@ -18,6 +18,8 @@ Mastercard Payment Platform
         ↓
 Partner Bank Systems
 
+```text
+
 The upstream systems were the consumer applications or client systems that generated and sent payment files or transaction requests to our platform.
 
 The downstream systems were the partner bank systems where Mastercard forwarded the payment files for processing and received the processing status.

@@ -18,7 +18,7 @@ Mastercard Payment Platform
         ↓
 Partner Bank Systems
 
-```text
+ ``` `
 
 The upstream systems were the consumer applications or client systems that generated and sent payment files or transaction requests to our platform.
 

@@ -58,10 +58,10 @@ Prepare high-impact SRE production support scenarios focusing on:
 | 23 | Production database backup precautions |✅ | ✅ |  8/10 |
 | 24 | Certificate management issue handled | ✅ | ✅ |  8.5/10 |
 | 25 | Monitoring tools experience (Splunk, Dynatrace, CloudWatch, Grafana) | ✅ | ✅ |  8/10 |
-| 26 | How do you reduce alert fatigue? | ❌ | ❌ | - |
-| 27 | Splunk search vs stats vs eval | ❌ | ❌ | - |
-| 28 | How do you collect and analyze logs? | ❌ | ❌ | - |
-| 29 | Jenkins pipeline issue handled | ❌ | ❌ | - |
+| 26 | How do you reduce alert fatigue? | ✅ | ✅ |  8/10 |
+| 27 | Splunk search vs stats vs eval |  ✅ | ✅ |  8/10 |
+| 28 | How do you collect and analyze logs? |  ✅ | ✅ |  8.5/10 |
+| 29 | Jenkins pipeline issue handled | ✅ | ✅ |  7.5/10 |
 | 30 | How do you handle production deployments? | ❌ | ❌ | - |
 | 31 | How do you handle failed deployments? | ❌ | ❌ | - |
 | 32 | Blue-Green vs Canary deployment | ❌ | ❌ | - |

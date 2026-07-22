@@ -43,8 +43,8 @@ Prepare high-impact SRE production support scenarios focusing on:
 | 8 | Infrastructure is healthy but application is failing - how do you investigate? | ✅ |  ✅  | 8/10 |
 | 9 | Application is slow - how do you investigate? | ✅ |  ✅  | 7/10 |
 | 10 | How do you troubleshoot increased API latency using Grafana? | ❌ | ❌ | - |
-| 11 | Kubernetes application has high latency - which Linux commands do you use? | ❌ | ❌ | - |
-| 12 | Pod crashes during P1 incident - troubleshooting approach | ❌ | ❌ | - |
+| 11 | Kubernetes application has high latency - which Linux commands do you use? |  ✅ |  ✅  | 9/10 |
+| 12 | Pod crashes during P1 incident - troubleshooting approach | ✅ |  ✅  | 7/10 |
 | 13 | Kubernetes pod continuously restarting - how do you troubleshoot? | ❌ | ❌ | - |
 | 14 | How do you troubleshoot high CPU? | ✅ | 🟡 | 5/10 |
 | 15 | How do you troubleshoot memory issues? | ✅ | 🟡 | 6/10 |

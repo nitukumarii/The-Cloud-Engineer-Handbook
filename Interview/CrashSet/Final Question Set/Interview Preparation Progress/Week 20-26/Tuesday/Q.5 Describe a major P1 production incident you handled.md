@@ -2,11 +2,10 @@
 
 ## Situation
 
-While working as an SRE at Mastercard, we faced a P1 incident where a production deployment caused application availability issues.
 
-After the deployment, some Kubernetes pods started continuously restarting because the liveness probe was failing, which caused the application instances to become unavailable.
+While working as an SRE at Mastercard, we faced a P1 incident where a production certificate used for secure communication with an external partner had expired, causing certificate validation failures and transaction processing issues.
 
-The monitoring alerts showed increased transaction failures, and users were unable to complete their file transfer requests due to the application service disruption.
+The monitoring alerts showed increased transaction failures, and some file transfer requests were failing because the application was unable to establish secure communication with the external system.
 
 ---
 
